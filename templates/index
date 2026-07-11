@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halftone RIP Pro - Separaciones Profesionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="top-bar">
+        <div class="brand">
+            <div class="brand-icon">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00d4ff"/>
+                            <stop offset="50%" stop-color="#ff4d8a"/>
+                            <stop offset="100%" stop-color="#ffd166"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="20" cy="20" r="3" fill="url(#brandGrad)"/>
+                    <circle cx="20" cy="40" r="3.5" fill="url(#brandGrad)"/>
+                    <circle cx="20" cy="60" r="4" fill="url(#brandGrad)"/>
+                    <circle cx="20" cy="80" r="4.5" fill="url(#brandGrad)"/>
+                    <circle cx="40" cy="50" r="6" fill="url(#brandGrad)"/>
+                    <circle cx="60" cy="50" r="8" fill="url(#brandGrad)"/>
+                    <circle cx="80" cy="20" r="9" fill="url(#brandGrad)"/>
+                    <circle cx="80" cy="40" r="10" fill="url(#brandGrad)"/>
+                    <circle cx="80" cy="60" r="11" fill="url(#brandGrad)"/>
+                    <circle cx="80" cy="80" r="12" fill="url(#brandGrad)"/>
+                </svg>
+            </div>
+            <div>
+                <div class="brand-title">Halftone RIP Pro</div>
+                <div class="brand-subtitle">Separaciones CMYK · Semitonos · Analisis de Diferencias</div>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="status-pill">
+                <span class="dot"></span>
+                <span>Local JIT Engine v2.0</span>
+            </div>
+            <button class="theme-btn" id="themeToggle">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-label">Modo Oscuro</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs-container">
+        <button class="tab-button active" id="tab-rip">
+            <span class="tab-icon">⚡</span>
+            RIP & Separaciones
+        </button>
+        <button class="tab-button" id="tab-preview">
+            <span class="tab-icon">👁</span>
+            Previsualizador & Diffs
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app">
+        <!-- SECTION: RIP & Separaciones -->
+        <div id="section-rip" class="section active">
+            <div class="layout-2col">
+                <!-- Left Column -->
+                <div>
+                    <!-- Upload Panel -->
+                    <div class="panel panel-accent">
+                        <div class="panel-title">
+                            <span class="panel-icon">📄</span>
+                            1. Cargar Archivo
+                        </div>
+                        <div class="drop-zone" id="dropZone">
+                            <div class="drop-zone-icon">📁</div>
+                            <div class="drop-zone-label">Arrastra tu archivo aquí</div>
+                            <div class="drop-zone-hint">
+                                o <button type="button" id="browseBtn" class="browse-btn">selecciona un archivo</button>
+                                <br><span style="opacity:0.6">PDF · PS — preseparado o compuesto (PDF/X-4)</span>
+                            </div>
+                        </div>
+                        <input type="file" id="fileInput" accept=".pdf,.ps,application/postscript,application/pdf" class="file-input-offscreen">
+                        <div id="uploadProgress" class="hidden" style="margin-top:12px">
+                            <div style="font-size:0.7rem;font-family:var(--font-mono);color:var(--text-muted);margin-bottom:4px" id="uploadProgressMsg">Subiendo...</div>
+                            <div class="progress-bar"><div class="progress-fill" id="uploadProgressFill" style="width:0%"></div></div>
+                        </div>
+                        <div id="fileInfo" class="file-info hidden">
+                            <div class="file-meta">
+                                <span class="file-name" id="fileName"></span>
+                                <span class="file-size" id="fileSizeDisplay"></span>
+                            </div>
+                            <button class="file-clear" id="clearFile" title="Eliminar archivo">✕</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Jobs Panel -->
+                    <div class="panel panel-accent-m" style="margin-top: 1rem; margin-bottom: 1rem; padding: 12px 16px;">
+                        <div class="panel-title" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+                            <span>🕒</span> Trabajos Recientes
+                        </div>
+                        <ul id="recentJobsList" style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+                            <li style="color: var(--text-muted); font-style: italic;">Aún no has procesado ningún archivo.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Config Panel -->
+                    <div class="panel panel-accent-m">
+                        <div class="panel-title">
+                            <span class="panel-icon">⚙️</span>
+                            2. Configuración de Semitono
+                        </div>
+                        <div class="stats stagger-children">
+                            <div class="stat-box">
+                                <div class="stat-value" id="statLpi">55</div>
+                                <div class="stat-label">LPI</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value" id="statDpi">600</div>
+                                <div class="stat-label">DPI</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value" id="statRatio">10.9</div>
+                                <div class="stat-label">Ratio</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value" id="statSize">-</div>
+                                <div class="stat-label">Tamaño</div>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <div class="form-label-row">
+                                    <label class="form-label">LPI (Lineatura)</label>
+                                    <span class="field-tip" tabindex="0">i
+                                        <span class="field-tip-bubble">
+                                            <strong>Líneas por pulgada de la trama.</strong> Más LPI = puntos más finos y detalle más nítido, pero más difícil de revelar y exponer en el emulsionado. Para <strong>textil/serigrafía</strong> usa 45-65 LPI. Mallas más cerradas (160+ hilos) toleran LPI más alto.
+                                        </span>
+                                    </span>
+                                </div>
+                                <input type="number" id="lpi" class="form-input" value="55" step="1" min="10" max="200">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label-row">
+                                    <label class="form-label">DPI (Resolución)</label>
+                                    <span class="field-tip" tabindex="0">i
+                                        <span class="field-tip-bubble">
+                                            <strong>Resolución de salida del archivo.</strong> Debe mantener un ratio de 8:1 a 16:1 respecto al LPI (ej: 55 LPI → 600 DPI da ratio 10.9:1, ideal). Un ratio muy bajo produce puntos irregulares o "escalonados"; muy alto solo aumenta el peso del archivo sin mejorar la trama.
+                                        </span>
+                                    </span>
+                                </div>
+                                <select id="dpi" class="form-select">
+                                    <option value="150">150 DPI</option>
+                                    <option value="300">300 DPI</option>
+                                    <option value="600" selected>600 DPI</option>
+                                    <option value="1200">1200 DPI</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label-row">
+                                    <label class="form-label">Ángulo base</label>
+                                    <span class="field-tip" tabindex="0">i
+                                        <span class="field-tip-bubble">
+                                            <strong>Rotación de la trama de puntos.</strong> Ángulos mal combinados entre canales producen <strong>muaré</strong> (un patrón de interferencia visible y no deseado). Si usas "Ángulos CMYK automáticos" no necesitas tocar este valor: ya aplica la combinación estándar de la industria (15°/75°/0°/45°) que evita el muaré.
+                                        </span>
+                                    </span>
+                                </div>
+                                <input type="number" id="angle" class="form-input" value="45" step="0.5" min="0" max="90">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label-row">
+                                    <label class="form-label">Forma del punto</label>
+                                    <span class="field-tip" tabindex="0">i
+                                        <span class="field-tip-bubble">
+                                            <strong>Redondo:</strong> el más versátil, buen comportamiento en tonos medios.<br>
+                                            <strong>Elipse:</strong> transiciones más suaves en degradados.<br>
+                                            <strong>Línea:</strong> efecto técnico/industrial, más exigente en el revelado.<br>
+                                            <strong>Cuadrado/Diamante:</strong> mayor definición en sombras, pero más riesgo de relleno de punto (dot gain) en mallas abiertas.
+                                        </span>
+                                    </span>
+                                </div>
+                                <select id="dotShape" class="form-select">
+                                    <option value="round">Redondo</option>
+                                    <option value="ellipse">Elipse</option>
+                                    <option value="diamond">Diamante</option>
+                                    <option value="line">Línea</option>
+                                    <option value="square">Cuadrado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="checkbox-row">
+                            <input type="checkbox" id="autoAngles" checked>
+                            <span>Ángulos CMYK automáticos (C:15° · M:75° · Y:0° · K:45°)</span>
+                            <span class="field-tip" tabindex="0" onclick="event.preventDefault()">i
+                                <span class="field-tip-bubble">
+                                    Aplica automáticamente un ángulo distinto a cada canal de color para que las tramas no se superpongan en patrones repetitivos. Desactívalo solo si tienes una razón técnica específica para fijar manualmente cada ángulo.
+                                </span>
+                            </span>
+                        </label>
+                        <button class="btn btn-primary" id="processBtn" disabled>
+                            <span>⚡</span>
+                            Procesar Separaciones
+                        </button>
+                    </div>
+
+                    <!-- Results Panel -->
+                    <div class="panel hidden" id="resultsPanel">
+                        <div class="panel-title">
+                            <span class="panel-icon">🎨</span>
+                            3. Separaciones Generadas
+                        </div>
+
+                        <!-- Advertencias / Pre-flight -->
+                        <div id="warningsPanel" style="display:none; background: rgba(255, 193, 7, 0.1); border-left: 3px solid #ffc107; padding: 10px 14px; margin-bottom: 1.5rem; border-radius: 0 4px 4px 0;">
+                            <div style="font-size: 0.8rem; font-weight: 600; color: #ffc107; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                                <span>⚠️</span> Advertencias detectadas (Pre-vuelo)
+                            </div>
+                            <ul id="warningsList" style="margin: 0; padding-left: 24px; font-size: 0.75rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                                <!-- Warnings injected via JS -->
+                            </ul>
+                        </div>
+
+                        <div id="resultsGrid" class="sep-grid"></div>
+                        <p style="margin: 10px 2px 0; font-size: 0.72rem; color: var(--text-muted); line-height: 1.5;">
+                            ⓘ La vista previa es una imagen reducida en pantalla: a tramas finas (LPI alto) puede mostrar un
+                            patrón ligeramente distinto al real por el reescalado (similar a fotografiar una tela con trama fina).
+                            El archivo PNG exportado conserva la trama exacta a resolución completa.
+                        </p>
+                        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap" id="bulkDownloads"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <!-- LPI Display -->
+                    <div class="lpi-display">
+                        <div class="lpi-num" id="lpiDisplay">55</div>
+                        <div class="lpi-label">Líneas por Pulgada</div>
+                        <div class="lpi-hint" id="ratioDisplay">600 DPI - ratio 10.9:1</div>
+                    </div>
+
+                    <!-- Progress Panel -->
+                    <div class="panel hidden progress-panel" id="progressPanel">
+                        <div class="panel-title">
+                            <span class="panel-icon">⏳</span>
+                            Procesando
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-msg" id="progressMsg">Iniciando...</div>
+                        <div class="console-log" id="logPanel"></div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="panel">
+                        <div class="panel-title">
+                            <span class="panel-icon">💻</span>
+                            Estado del Sistema
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:8px">
+                            <div style="display:flex;align-items:center;gap:8px">
+                                <span style="font-size:1.2rem">🖨️</span>
+                                <div>
+                                    <div style="font-size:0.8rem;font-weight:600">Ghostscript</div>
+                                    <div style="font-size:0.7rem;color:var(--text-muted);font-family:var(--font-mono)">{{ gs_status }}</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:8px">
+                                <span style="font-size:1.2rem">⚡</span>
+                                <div>
+                                    <div style="font-size:0.8rem;font-weight:600">Numba JIT</div>
+                                    <div style="font-size:0.7rem;color:var(--text-muted);font-family:var(--font-mono)">{{ numba_status }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border-subtle)">
+                            <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.7">
+                                <strong style="color:var(--text-secondary)">Procesamiento 100% local</strong><br>
+                                Python 3 + Flask + Numba + Ghostscript<br>
+                                Paralelo (hasta 7 colores simultáneos)<br>
+                                Soporta archivos de hasta 10 GB<br>
+                                Exporta PNG en alta resolución
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tip Box -->
+                    <div class="tip-box">
+                        <div class="tip-title">💡 Tip Profesional</div>
+                        <div class="tip-text">
+                            Para <strong>serigrafía textil</strong> usa <strong>45-65 LPI</strong>. 
+                            Para <strong>papel</strong> usa <strong>85-150 LPI</strong>. 
+                            El ratio DPI/LPI ideal es entre <strong>8:1 y 16:1</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: Preview & Diffs -->
+        <div id="section-preview" class="section">
+            <div class="layout-preview">
+                <!-- Left: Separations Preview -->
+                <div class="preview-panel">
+                    <div class="panel-label">🎨 Separaciones Procesadas</div>
+
+                    <div class="view-tabs">
+                        <button class="view-tab active" data-mode="individual">INDIVIDUALES</button>
+                        <button class="view-tab" data-mode="composite">COMPUESTO</button>
+                    </div>
+
+                    <div id="separations-container">
+                        <div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--text-muted);font-family:var(--font-mono);font-size:0.8rem;">
+                            Procesa un archivo primero para ver las separaciones
+                        </div>
+                    </div>
+
+                    <div id="composite-container" style="display:none">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px; flex-wrap: wrap;">
+                            <div class="mode-buttons" style="margin-bottom: 0;">
+                                <button class="mode-btn active" data-mode="overprint">OVERPRINT</button>
+                                <button class="mode-btn" data-mode="knockout">KNOCKOUT</button>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; background: var(--bg-tertiary); padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border-light);">
+                                <label style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--text-muted); margin: 0;">Fondo de Prenda:</label>
+                                <input type="color" id="composite-bg-color" value="#ffffff" style="width: 24px; height: 24px; padding: 0; border: none; cursor: pointer;" title="Color del fondo de la camiseta/prenda">
+                            </div>
+                        </div>
+                        <div class="composite-canvas-wrapper">
+                            <canvas id="composite-canvas"></canvas>
+                            <div id="composite-mode-label" class="composite-mode-label">OVERPRINT</div>
+                        </div>
+                        <div class="layer-controls">
+                            <div class="layer-controls-header">
+                                <span>🎨</span>
+                                <span>CAPAS (arrastrar para reordenar)</span>
+                            </div>
+                            <div id="layers-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="stats" style="margin-top:16px">
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-sep-count">0</div>
+                            <div class="stat-label">Separaciones</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-cmyk-count">0</div>
+                            <div class="stat-label">CMYK</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-spot-count">0</div>
+                            <div class="stat-label">Spot</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-total-coverage">0</div>
+                            <div class="stat-label">Capas Activas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Reference & Analysis -->
+                <div class="preview-panel">
+                    <div class="panel-label">🔍 Referencia & Análisis de Diferencias</div>
+
+                    <div id="ref-area">
+                        <div class="ref-drop" id="ref-drop">
+                            <div class="ref-drop-icon">🖼️</div>
+                            <div class="ref-drop-label">Cargar imagen de referencia</div>
+                            <div class="ref-drop-hint">JPG · PNG · TIFF · WEBP</div>
+                            <input type="file" id="ref-input" accept="image/jpeg,image/png,image/tiff,image/webp,image/gif,image/bmp" style="display:none">
+                        </div>
+                        <div class="ref-actions">
+                            <button class="ref-btn" id="btn-demo-ref">🎲 Cargar demo</button>
+                            <button class="ref-btn danger" id="btn-clear-ref" style="display:none">🗑️ Limpiar</button>
+                        </div>
+                    </div>
+
+                    <div id="ref-canvas-wrap" style="display:none">
+                        <!-- Visor de comparación -->
+                        <div class="ref-compare-container" id="align-container" style="position: relative; background: #1a1a2e; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-light);">
+                            <img id="align-base-img" style="width: 100%; display: block;" alt="Separaciones">
+                            <img id="ref-preview-img" class="diff-overlay" style="opacity:0.5; transform-origin: top left; pointer-events: none;" alt="Referencia">
+                        </div>
+
+                        <!-- BARRA DE CROSSFADE -->
+                        <div class="overlay-control" id="crossfade-ctrl" style="display:none; margin-top: 10px;">
+                            <span class="overlay-label" style="font-size:0.6rem;">◀ Solo Referencia</span>
+                            <input type="range" min="0" max="100" value="50" id="crossfade-slider" style="flex:1;">
+                            <span class="overlay-label" style="font-size:0.6rem; text-align:right;">Solo Separación ▶</span>
+                        </div>
+
+                        <!-- AJUSTE MANUAL DE REFERENCIA -->
+                        <div id="alignment-ctrl" style="display:none; margin-top:10px; padding:12px; background: var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius: var(--radius-sm); flex-direction: column; gap:6px;">
+                            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--accent-primary); font-weight:700; letter-spacing:0.1em; margin-bottom:4px;">AJUSTE MANUAL DE REFERENCIA</div>
+                            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); margin-bottom:6px;">Usa los controles para que el diseño de la referencia encaje exactamente sobre la separación.</div>
+
+                            <button type="button" id="auto-align-btn" style="margin-bottom:8px; padding:6px 10px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--accent-primary); border-radius:4px; color:var(--accent-primary); cursor:pointer;">
+                                🎯 Auto-alinear
+                            </button>
+                            <div id="auto-align-status" style="display:none; font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); margin-bottom:6px;"></div>
+
+                            <div class="overlay-control" style="margin:0; border:none; padding:0; background:transparent;">
+                                <span class="overlay-label">Escala</span>
+                                <input type="range" min="10" max="300" value="100" id="align-scale" style="flex:1;">
+                                <input type="number" id="align-scale-num" value="100" min="10" max="300" style="width:54px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
+                                <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">%</span>
+                            </div>
+                            <div class="overlay-control" style="margin:0; border:none; padding:0; background:transparent;">
+                                <span class="overlay-label">Posición X</span>
+                                <input type="range" min="-5000" max="5000" value="0" id="align-x" style="flex:1;">
+                                <input type="number" id="align-x-num" value="0" min="-5000" max="5000" style="width:60px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
+                                <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">px</span>
+                            </div>
+                            <div class="overlay-control" style="margin:0; border:none; padding:0; background:transparent;">
+                                <span class="overlay-label">Posición Y</span>
+                                <input type="range" min="-5000" max="5000" value="0" id="align-y" style="flex:1;">
+                                <input type="number" id="align-y-num" value="0" min="-5000" max="5000" style="width:60px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
+                                <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">px</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="no-ref-msg" style="text-align:center;padding:1rem;font-size:0.7rem;color:var(--text-muted);font-family:var(--font-mono)">
+                        Carga una imagen de referencia para comparar con las separaciones procesadas
+                    </div>
+
+                    <button class="analyze-btn" id="analyze-btn" disabled>
+                        <span>🔍</span>
+                        Analizar diferencias
+                    </button>
+
+                    <div class="diff-results" id="diff-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-subtle);">
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+            <span style="color: var(--accent-primary);">●</span> Motor local
+            <span style="margin: 0 8px;">·</span>
+            Ghostscript + Numba JIT
+            <span style="margin: 0 8px;">·</span>
+            Halftone RIP Pro v2.0
+        </div>
+        <div style="margin-top: 6px; font-size: 0.65rem; color: var(--text-dim);">
+            Procesamiento 100% offline · Tus archivos nunca salen de esta máquina
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/rip.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/preview.js') }}"></script>
+
+    <!-- Tab Navigation & Theme -->
+    <script>
+    (function() {
+        'use strict';
+
+        // Theme handling
+        let dark = localStorage.getItem('theme') !== 'light';
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeLabel = document.getElementById('theme-label');
+
+        function applyTheme() {
+            if (dark) {
+                html.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.textContent = '☀️';
+                if (themeLabel) themeLabel.textContent = 'Modo Claro';
+            } else {
+                html.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.textContent = '🌙';
+                if (themeLabel) themeLabel.textContent = 'Modo Oscuro';
+            }
+        }
+
+        applyTheme();
+
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                dark = !dark;
+                localStorage.setItem('theme', dark ? 'dark' : 'light');
+                applyTheme();
+            };
+        }
+
+        // Tab navigation
+        const tabRip = document.getElementById('tab-rip');
+        const tabPreview = document.getElementById('tab-preview');
+        const sectionRip = document.getElementById('section-rip');
+        const sectionPreview = document.getElementById('section-preview');
+
+        function switchTab(tab) {
+            const isRip = tab === 'rip';
+
+            if (tabRip) tabRip.classList.toggle('active', isRip);
+            if (tabPreview) tabPreview.classList.toggle('active', !isRip);
+            if (sectionRip) sectionRip.classList.toggle('active', isRip);
+            if (sectionPreview) sectionPreview.classList.toggle('active', !isRip);
+
+            // Trigger event for preview module
+            if (!isRip) {
+                window.dispatchEvent(new Event('preview:tabActivated'));
+            }
+        }
+
+        if (tabRip) tabRip.onclick = () => switchTab('rip');
+        if (tabPreview) tabPreview.onclick = () => switchTab('preview');
+
+        // Atajos de teclado: Ctrl/Cmd+1 y Ctrl/Cmd+2 para cambiar de
+        // pestaña, Escape para cerrar un overlay de pantalla completa si
+        // hay uno abierto. No interfieren con escribir en inputs/textareas
+        // normales (sin Ctrl) ni con los atajos nativos del navegador.
+        document.addEventListener('keydown', (e) => {
+            const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+            if (ctrlOrCmd && e.key === '1') {
+                e.preventDefault();
+                switchTab('rip');
+                if (tabRip) tabRip.focus();
+            } else if (ctrlOrCmd && e.key === '2') {
+                e.preventDefault();
+                switchTab('preview');
+                if (tabPreview) tabPreview.focus();
+            } else if (e.key === 'Escape') {
+                const overlay = document.querySelector('.fullscreen-overlay');
+                if (overlay) overlay.remove();
+            }
+        });
+
+    })();
+    </script>
+
+    <!-- Field Tips: evita que el tooltip se salga de la pantalla -->
+    <script>
+    (function() {
+        'use strict';
+
+        function adjustTipPosition(tip) {
+            const bubble = tip.querySelector('.field-tip-bubble');
+            if (!bubble) return;
+
+            // Reset para medir desde la posición base (left:0, sin shift)
+            bubble.style.setProperty('--tip-shift-x', '0px');
+
+            const rect = bubble.getBoundingClientRect();
+            const margin = 8;
+            let shiftX = 0;
+
+            if (rect.right > window.innerWidth - margin) {
+                shiftX = (window.innerWidth - margin) - rect.right;
+            } else if (rect.left < margin) {
+                shiftX = margin - rect.left;
+            }
+
+            if (shiftX !== 0) {
+                bubble.style.setProperty('--tip-shift-x', `${shiftX}px`);
+            }
+        }
+
+        document.querySelectorAll('.field-tip').forEach(function(tip) {
+            tip.addEventListener('mouseenter', () => adjustTipPosition(tip));
+            tip.addEventListener('focus', () => adjustTipPosition(tip));
+            tip.addEventListener('click', function(e) {
+                // No interferir con el preventDefault que ya tienen algunos tips
+                // (ej: el del checkbox de ángulos automáticos)
+                adjustTipPosition(tip);
+            });
+        });
+
+        window.addEventListener('resize', function() {
+            document.querySelectorAll('.field-tip').forEach(adjustTipPosition);
+        });
+    })();
+    </script>
+</body>
+</html>
