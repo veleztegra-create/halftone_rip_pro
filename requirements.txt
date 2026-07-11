@@ -1,0 +1,17 @@
+flask>=2.3.0
+pillow>=10.0.0
+numpy>=1.24.0
+werkzeug>=2.3.0
+
+# scipy se usa en /api/auto_align (ndimage.label) para distinguir el blob de
+# tinta principal de marcas de registro/guías sueltas en la separación. Si no
+# está instalado, el auto-align sigue funcionando pero cae a una detección
+# menos precisa (bbox de todo el contenido, sin separar guías del arte).
+scipy>=1.11.0
+
+# Numba acelera el cálculo de semitono (~10x más rápido). Es opcional:
+# si falla la instalación, el programa sigue funcionando con NumPy puro,
+# solo más lento. Numba suele tardar varios meses en soportar versiones
+# nuevas de Python, así que puede no instalar en versiones muy recientes;
+# eso es esperado y no debe tratarse como un error del programa.
+numba>=0.59.0; python_version < '3.15'
