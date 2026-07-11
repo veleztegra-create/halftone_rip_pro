@@ -1,0 +1,546 @@
+€•®à      (Œapply_halftone_fast”Œobject”BXK  ELF          >                    ˜G          @     @   9R¢Fß‘?-DTû!	@      ð?      à?      @      @      À?       @      Ð?     ào@AWAVAUATVWUSHì(  Åy)„$  Åù)¼$   Åù)´$ð  L‰ÆI‰ÕH‰ÏHÇ„$°       HÇ„$à       HÇ„$      HÇ„$€       HÇD$x    HÇ„$8      HÇD$p    HÇD$h    HÇD$`    HÇD$X    HÇD$P    HÇ„$À       HÇ„$ˆ      H¸        L‰ÁÿÐHƒ¼$È   „ì  L‹¤$¨  H¸        M…äˆ  L‹´$°  M…öˆ   L‰åI¯î€¿  H¸        H‰éº    ÿÐH…À„®  H‰„$¨   H‹@H‰D$HÅùWÀÅù„$x  I\$ÿH‰œ$   IFÿH‰„$  H¸        ÿÐI‰ÇH¸        ÿÐM…ÿŽ_  L‰¬$ˆ   H‰¬$   H‰´$˜   H‰„$    H¸        M‰åL¤$x  H´$   º   L‰ùM‰àI‰ñÿÐI‰ÇH¸        1ÉÿÐJ½    H¸        ÿÐH‰ÅH‰D$ HÇD$(    H¸        ¹   L‰âI‰ðM‰ùÿÐH‰¬$°   H‹D$HH‰„$¸   L‰¼$à   HÇ„$è      L‰¬$ð   L‰´$ø   HÇ„$      HÇ„$      HÇ„$      L‰´$(  HÇ„$0     ÇD$D    H¸        Ld$DL‰áÿÐH¸        ÿÐH‰ÆI¾        AÿÖH‰D$8HÇD$0   HÇD$(   HÇD$     H¹        H¸        H”$°   L„$à   LŒ$  ÿÐH¸        H‰ñÿÐH¸        L‰áÿÐH‹Œ$    H¸        ÿÐH¸        H‰éÿÐHÇ„$€       H‰\$xAÿÖH‰ÅH¸        ÿÐH…íŽ  Äáó*„$Ø  I‰ÅH¸        ÅûY8Äáó*„$È  H‹œ$   Äáó*Œ$Ð  Ås^ÀH¸        Åù(ÇÿÐÅù(ðH¸        Åù(ÇÿÐÅù(øH´$€   L|$xº   H‰éI‰ðM‰ùH¸        ÿÐH‰Å1ÉH¸        ÿÐHm    H¸        ÿÐI‰ÄH‰D$ HÇD$(    ¹   H‰òM‰øI‰éH¸        ÿÐL‰¤$8  L‹´$°  L‰t$pHD$pÅ{D$hH‰„$@  HD$hH‰„$H  H‰œ$P  Åû|$`HD$`H‰„$X  H‹\$HH‰œ$`  H‹„$à  H‰D$XHD$XH‰„$h  Åût$PHD$PH‰„$p  H‰¬$À   HÇ„$È      L‹¼$¨  L‰¼$Ð   L‰´$Ø   HÇ„$ˆ     ÅùWÀÅý„$¨  Åý„$  HÇ„$È     H‹„$¸  H‰„$Ð  H‹„$À  H‰„$Ø  L‰´$à  HÇ„$è     ÇD$D    Hl$DH‰éH¸        ÅøwÿÐH¸        ÿÐH‰ÆH¸        ÿÐH‰D$8HÇD$0   HÇD$(   HÇD$     H¹        H”$8  L„$À   LŒ$ˆ  H¸        ÿÐH‰ñH¸        ÿÐH‰éH¸        ÿÐL‰éH¸        ÿÐL‰áH¸        ÿÐH‹„$¨   H‰ HÇG    H‹„$   H‰GHÇG   H‰_ L‰(L‰w0L‰w8HÇG@   H¸        H‹Œ$˜   ÿÐ1ÀÅø(´$ð  Åø(¼$   Åx(„$  HÄ(  []_^A\A]A^A_ÃH¸        ë;H¸        ë/H¸        ë#H¹        H¸        L‰úÿÐH¸        I‰E ¸   é|ÿÿÿH¹        H¸        H‰êÿÐH¸        H‹Œ$ˆ   H‰¸   éDÿÿÿ„     AWAVAUATVWUSHìØ  H‰ÑH„$È   H‰D$@H„$Ð   H‰D$8H„$Ø   H‰D$0H„$à   H‰D$(H„$è   H‰D$ Hº        H¸        A¸   A¹   ÿÐÅøWÀÅü„$ð   Åü„$  HÇ„$0      HÇ„$°       Åü„$@  Åü„$`  HÇ„$€      …À„Ö  H¸        H‹0H…ö„Û  Åü„$  H‹Œ$è   Åü„$°  HÇ„$Ð      H¸        H”$  ÅøwÿÐHƒ¼$¨  •Á…À•ÃË€û„›  „Û…_  H‹¼$  L‹´$°  L‹¼$¸  H‹„$À  H‰„$¨   H‹„$È  H‰„$    H‹„$Ð  H‰„$ˆ   H‹Œ$à   I¼        AÿÔH½        I½        H…ÀH‰|$xL‰´$˜   L‰¼$   „1  H‰ÃH‰ÁÿÕH‰„$€   H‰ÙAÿÕH¿        ÿ×H…À…V  H‹Œ$Ø   AÿÔH…À„  I‰ÆH‰ÁÿÕH‰ÃL‰ñAÿÕÿ×H…À…&  H‹Œ$Ð   AÿÔH…À„ô  I‰ÇH‰ÁÿÕI‰ÆL‰ùAÿÕÿ×H…À…ö  H‹Œ$È   AÿÔH…À„Ô  I‰ÄH‰ÁÿÕI‰ÇL‰áAÿÕÿ×H…À…Æ  H‰´$À   ÅøWÀÅü„$  Åü„$ð   HÇ„$0      L‰|$pL‰t$hH‰\$`H‹„$€   H‰D$XH‹„$ˆ   H‰D$PH‹„$    H‰D$HH‹„$¨   H‰D$@H‹„$   H‰D$8H‹„$˜   H‰D$0H¸        HŒ$ð   H”$°   L‹t$xM‰ðÅøwÿÐ‰ÅH‹œ$°   H‹„$ð   H‰„$   H‹„$ø   H‰„$¨   H‹„$   H‰„$    H‹„$  H‰„$˜   L‹¼$  H‹´$  L‹¤$   L‹¬$(  H‹¼$0  H¸        L‰ñÿÐ…ítjH¸        ÿÐ‹SH‹
+ƒ{  ŽŸ   HcÒH¸        ÿÐH‰ÆH‹KÿSH…À„i  I¸        H‰ñH‰ÂAÿÐH‰ÆH¸        H‰ÙÿÐH…öukëxH‰¼$¸   L‰¬$€   L‰¤$ˆ   H‰t$xH‹œ$    L‹´$¨   H‹„$À   H‹HH…ÉtAH¸        1ÒÿÐH‰ÆëPL‹CH¸        ÿÐH‰ÆH…ötH¸        H‰ñÿÐ1Àéý   H¹        Hº        H¸        ÿÐ1öL‰ýL‹¼$˜   H‹¼$   L‹d$xL‹¬$ˆ   H¹        I¸        H¸        º    ÿÐH‰¼$@  L‰´$H  H‰œ$P  L‰¼$X  H‰¬$`  L‰¤$h  L‰¬$p  H‹Œ$€   H‰Œ$x  H‹Œ$¸   H‰Œ$€  H‰t$ Iº        HŒ$@  H‰ÂA¸   A¹   AÿÒH‰ÆH‰ùH¸        ÿÐH‰ðHÄØ  []_^A\A]A^A_ÅøwÃH¹        Hº        é¥   H¹        Hº        H¸        ÿÐ„Û„EûÿÿéŸþÿÿHÇ„$€       H¿        ÿ×H…À„Ùûÿÿë-1Ûÿ×H…À„úûÿÿëE1öÿ×H…À„üÿÿëE1ÿÿ×H…À„:üÿÿH¸        H‹L$xé9þÿÿH¹        Hº        H¸        ÅøwÿÐéþÿÿAWAVAUATVWUSHìø   I‰ÐH‰ÎÅü„$h  H‹„$ˆ  ÅüŒ$  ÅèWÒÅü”$Ð   Åü”$°   HÇ„$ð       HÇ„$ˆ       ÅüL$XH‰D$PÅüD$0H¸        HŒ$°   H”$ˆ   ÅøwÿÐH‹¼$ˆ   H‹Œ$°   H‹”$¸   L‹„$À   L‹Œ$È   H‹¬$Ð   L‹´$Ø   L‹¼$à   L‹¤$è   L‹¬$ð   Ç„$„       …À„  L‰Œ$   L‰„$˜   H‰”$    H‰Œ$¨   H¸        HŒ$„   ÿÐH¸        ÿÐ‹WH‹ƒ  Ž   HcÒH¸        ÿÐH‰ÃH‹OÿWH…À„ÿ   I¸        H‰ÙH‰ÂAÿÐH‰ÃH¸        H‰ùÿÐH…ÛtH¸        H‰ÙÿÐH¹        H¸        ÿÐH‰ÇH¸        H‰ùÿÐH¸        H‰ùÿÐH¸        HŒ$„   ÿÐH‹Œ$¨   H‹”$    L‹„$˜   L‹Œ$   H‰H‰VL‰FL‰NH‰n L‰v(L‰~0L‰f8L‰n@H‰ðHÄø   []_^A\A]A^A_ÃL‹GH¸        ÿÐH‰ÃH…Û…0ÿÿÿé:ÿÿÿH¹        Hº        H¸        ÿÐ1É1ÒE1ÀE1É1íE1öE1ÿE1äE1íéhÿÿÿfffff.„     AWAVAUATVWUSHƒìhH‹H…ÛŽ«  L‹zM‹ I‹@H‰D$`H¸þÿÿÿÿÿÿH‹H‰T$@H‹IH‰L$XH½        HƒÀúH‰D$P1ÀH‰\$(L‰d$ ë„     H‹D$HHÿÀH9Ø„F  H‰D$HI¯ÄH‹L$@L‹H‹LL)ÉHQI¸þÿÿÿÿÿÿL9ÁA¾    LFòM…ö~µH‹L$@L‹DH‹DL)ÀHHHºþÿÿÿÿÿÿH9Ð¾    HFñH…ö~„H‹|$HH¯|$`H|$XIƒþsE1íAƒæ …Œ  é\ÿÿÿL‰D$0L‰L$8L‰ËI¯ßHûLÃIFøI‰ÄIÁìIÿÄHƒø‚·  M‰åIƒåüfD  H‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûIƒÅü…VþÿÿM‰õL#l$PAƒätu„     H‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûH‰Ù1ÒI‰ðÿÕLûIÿÌu“H‹\$(L‹d$ L‹L$8L‹D$0Aƒæ „ÕüÿÿMÍM¯ïLÇLï„     H‰ù1ÒI‰ðÿÕLÿIÿÎuîé©üÿÿHƒÄh[]_^A\A]A^A_Ã„     H…ÉtðHÿ	tÃH¸        Hÿà€    AWAVAUATVWUSHì˜  Åy)¼$€  Åy)´$p  Åy)¬$`  Åy)¤$P  Åy)œ$@  Åy)”$0  Åy)Œ$   Åy)„$  Åù)¼$   Åù)´$ð   H‹H‰„$À   H…ÀŽã  H‹BH‰D$0I‹ H‰„$¸   I‹@H‰„$¨   H‹AH‰„$    H‹AH‰„$˜   I‹@H‰„$   I‹@H‰„$ˆ   H‹A H‰„$€   I‹@ H‰D$xI‹@(H‰D$pH‹A0H‰D$hI‹@0H‰D$`H¸        Åø( Åø)„$à   H¸        Åø( Åø)„$Ð   H¸        Å{H¸        Åû ÅûD$(H¸        Åû ÅûD$8H¸        Å{ H‹A8H‰D$XI‹@8H‰D$PH‹A(H‰D$HH‹H‰„$°   H‹AH‰D$@1ÀI¼        I¿        ëfD  H‹D$ HÿÀH;„$À   „Ž  H‰D$ H¯„$¸   H‹Œ$°   H‹L‹DI)ØH¸þÿÿÿÿÿÿI9Àw¹H‹D$ H¯„$¨   H‹Œ$    H‹4H…ö~šH‹T$ H‰ÐH¯„$   H‹Œ$˜   Å{,H‰ÐH¯D$xH‹Œ$€   Å{4H‰ÐH¯D$PH‹L$XÅ{<H‰ÕH¯l$pHl$HH‰ÐH¯„$ˆ   HD$@H‰ßH¯|$0HýHÇH‰ÐH¯D$`H‹L$hL‹4IÿÀë2fffff.„     H‹”$È   LBÿHÿÃH‹L$0HÍHÏHƒúŽÜþÿÿL‰„$È   ÄáùnÃÅùb„$à   Åù\„$Ð   ÅùÆÈÅóXÀÅƒYøÅ
+YÀE1íëS€    ÄÁ#YÁAÿÔH¸        ÅûX ÅûYD$(B¶/Åã*ÈÅ›\ÉÄÁs^ÌÅù.È–ÀöØBˆD- IEI‰ÅH9Æ„TÿÿÿÄÁã*ÅÅ‹YÈÅó\ÏÄÁs^ÍÄãq
+ÑÅƒYÀÅ»XÀÅó\ÊÄÁ{^ÅÄãy
+ÐÅsXÑÅû\ÂÅ{XØIƒþw|Cÿ$÷ÄÁ+YÁAÿÔÅù(ðÄÁ#YÁé}   f„     ÄÁ+YÁAÿÔÅù(ðÄÁ#YÁAÿÔÅËYÀé;ÿÿÿÄÁ+YÁAÿÔH¸        ÅûY0ÄÁ#YÁAÿÔÅûXÆH¸        ÅûX H¸        ë2ÄÁ+YÁAÿÔÅù(ðÄÁ+XÃÅ³YÀÅûYD$(AÿÔÅËXÀÅûXD$8H¸        ÅûY éØþÿÿÅø(´$ð   Åø(¼$   Åx(„$  Åx(Œ$   Åx(”$0  Åx(œ$@  Åx(¤$P  Åx(¬$`  Åx(´$p  Åx(¼$€  HÄ˜  []_^A\A]A^A_Ãfffff.„     H…ÉtðHÿÃ        0C  0E              0C      0E                                €•:       Œbuiltins”ŒZeroDivisionError”“”Œdivision by zero”…”N‡”.           ²€ ø‹­_ðð$>„Ú¹«³f                    E                                       num_threads: %d
+                €•e       Œbuiltins”ŒRuntimeError”“”Œ@Invalid number of threads. This likely indicates a bug in Numba.”…”N‡”.‹ÖÕA³ã6ýy™I@xÆŠ:Š                    p                                       num_threads: %d
+                apply_halftone_fast             missing Environment: _ZN08NumbaEnv8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx           can't unbox array from PyObject into native value.  The object maybe of a different type        `env.consts` is NULL in `read_const`            €•       Œnumpy”Œ ndarray”“”.ß¼ýÓŸË&ôÐÆ€•D‡¸Àµ;¸£            Error creating Python tuple from runtime exception arguments    Error creating Python tuple from runtime exception arguments    <numba.core.cpu.CPUContext object at 0x000001CAAD3E5D90>        €•B       Œbuiltins”Œ
+ValueError”“”Œnegative dimensions not allowed”…”N‡”.   3…c½¹ÚÈ8B"s,HoÁpk                    M                                       €•~       Œbuiltins”Œ
+ValueError”“”Œ[array is too big; `arr.size * arr.dtype.itemsize` is larger than the maximum possible size.”…”N‡”.       XáNÌµ ±à it#æ…ËŒ<W                    ‰                                       €•K       Œbuiltins”Œ
+MemoryError”“”Œ'Allocation failed (probably too large).”…”N‡”.          º(ð\p óG|sHße«â	                    V                                      zR x   L              X        BBB B(A0A8A@AHbðƒ	†… „ŒŽ—˜™     D   l                  BBB B(A0A8A@AHG ƒ	†… „ŒŽ   D   ´           ¢       BBB B(A0A8A@AHGÀƒ	†… „ŒŽ   D   ü           Ø       BBB B(A0A8A@AHD°ƒ	†… „ŒŽ      D                         \   d          Ò       BBB B(A0A8A@AHaàƒ	†… „ŒŽ—˜™š›œžŸ                               Œ   ñÿ                                                            ]   	       (       p   	 p       (       1   	 p      (       ¯   	        (       s   	                î   	 P      (       |   	 €             .   	               w
+   	 ð      %       ;   	                0   	 @                 	 À      Æ       ô   	       Y          	 `      =       •   	 à      9       Œ   	        =                                                       	         E            	                 Á   	 P              
+   	 À       p       
+   	 0             |   	        M       W   	 p             P   	 À      ‰       œ   	 P             Î   	        V       æ   	               ƒ            X       K  "  €      
+       ú	                     É                     ‚                     ™                     k                     
+                     ã	                     ã                     %
+                     —
+  "         Ø                           7
+                     Ñ                     
+                     O                     Å                     »  "         Ò      V  "  €             !                     Î     `             c                          òÿ              1                     î                     Ü                     a                     Ô	                     %                     ¨                     P                     š                      S                     u                      Â                     ÿ                     ü                     (                     ï                     }    ð
+      ¢                           „                      I                     Ù                     
+   òÿ              2   òÿ              r   òÿ              £
+   òÿ              £    òÿ              Õ   òÿ              *   òÿ              ›   òÿ              Ã          "           é                            #           n         $           }         %           ²         &           â         '           ø         (                    )           ¨         *           ¼         +           Ë         $           ø         ,                    -           &         .           5         /           L         '           X         0           ~         %                                Î         1           â         2                    &           "         '           6         (           a         )           •         *           ¤         +           ³         $           ß         3                    -                    .                    /           .         '           =         0           ˆ         4           Í            p       Ù            p      å                   ñ                    û         5           
+             P      "             €      ,          5           ;             P      ¹                    Ã          7           /         8           k         9           ö         :           	         ;           
+	         <           K	         =           w
+         !           
+         4           #
+         >           B
+         ?           a
+         @           w
+         A           Ë
+         B           â
+         C           ö
+         D                    E                       ð                F           N                   X            @      b         C           Ð         G           ú         4            
+         E           *
+            À      9
+         H           C
+                  M
+         F           r
+         =           ¶
+         4           Ê
+         E           Ô
+            `      Þ
+         F           d         !                    *                    >           9         ?           X         @           n         A           ‚         D           ‘            à      ›         J           ª         K           ¹         <           È         /           :         C           W         E           a                   k         F           é         L           Ž         M           £                    º                   Ñ                   ß                   ó            8                    H       F         2           P                    Ê                   —                    ±            (       ¿            0       ó            @                     Q                                      À                   p      p                     €             P       P            À       `            0                                      p      p            À      €            P                          0                                         p             `       ¸             ð
+                          H            €      h                    .const.missing Environment: _ZN08NumbaEnv8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx _ZN7cpython8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx cfunc._ZN8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx _ZN08NumbaEnv5numba2np9arraymath13round_ndigitsB3v14B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEdx _ZN08NumbaEnv5numba7cpython7numbers14int_power_impl12_3clocals_3e9int_powerB3v15B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEdx .rela.ltext .text .const.apply_halftone_fast memset numba_runtime_build_excinfo_struct printf_format .const.Error creating Python tuple from runtime exception arguments cos get_num_threads NRT_MemInfo_call_dtor PyExc_TypeError PyExc_RuntimeError numba_parallel_for PyErr_Clear NRT_adapt_ndarray_from_python sin PyList_GetItem .note.GNU-stack _ZN08NumbaEnv5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj _ZN08NumbaEnv5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj PyLong_AsLongLong PyNumber_Long PyErr_SetString PyUnicode_FromString printf NRT_adapt_ndarray_to_python_acqref NRT_incref NRT_decref Py_DecRef set_parallel_chunksize get_parallel_chunksize get_sched_size PyBytes_FromStringAndSize numba_do_raise numba_gil_release numba_gil_ensure .const.can't unbox array from PyObject into native value.  The object maybe of a different type .rela.eh_frame PyArg_UnpackTuple numba_unpickle PyErr_WriteUnraisable NRT_Free _ZN08NumbaEnv13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd __gufunc__._ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd PyErr_Occurred do_scheduling_unsigned NRT_MemInfo_alloc_aligned deallocate_sched PyEval_SaveThread PyEval_RestoreThread .strtab .symtab .rela.lrodata .rela.rodata .const.`env.consts` is NULL in `read_const` _ZN08NumbaEnv13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE __gufunc__._ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE <string> .const.<numba.core.cpu.CPUContext object at 0x000001CAAD3E5D90> _ZN08NumbaEnv5numba2np9arraymath13impl_np_round12_3clocals_3e4implB3v13B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEd24omitted_28default_3d0_2927omitted_28default_3dNone_29 _ZN08NumbaEnv5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29 .rodata.cst8 .const.picklebuf.1970000227168 .const.pickledata.1970000227168 .const.picklebuf.1970001407456 .const.pickledata.1970001407456 .const.picklebuf.1969995095056 .const.pickledata.1969995095056 .const.picklebuf.1970001406336 .const.pickledata.1970001406336 .rodata.cst16 .const.pickledata.140719074538864 .const.picklebuf.1970000319152 .const.pickledata.1970000319152 .const.pickledata.1970000227168.sha1 .const.pickledata.1970001407456.sha1 .const.pickledata.1969995095056.sha1 .const.pickledata.1970001406336.sha1 .const.pickledata.140719074538864.sha1 .const.pickledata.1970000319152.sha1 printf_format.1 .const.Error creating Python tuple from runtime exception arguments.1                                                                       L
+                     À6      Ò                             (                    @                                      $                    @       P                             !                          Š                                  @               x*      h
+                          -                                                         o
+                    @                                     j
+     @               à4      `                            a
+                   `      H                             \
+     @               @5      ð          	                 b                     ¨                                      Y     p               ¨       À                             T      @               06                                 T
+                     h"               !                 ”BÔp  BCÀÞ5     b0$JY¾¦MûµÏ
+Q€L   !  H  
+!        #‘AÈI29’„%‹b€EB’
+BÄ28K
+2bˆHpÄ!#D‡ŒA’dÈ± CFˆ É2b„X#D¡‚¢Ã ËbŒŒ%:tÈ  ‰   <   "f²B‚‰RB‚‰‘qÂPH
+	&FÆBb&ú€æ,
+’"˜# S  $\ÆAfY$H=AæÙdb@VÁ(ˆ   ˆ" Š¢(Š¢h`Ž (ÅU‚¨
+PŠ(Š  ST * @DE˜€!€"t]!   jA @•a€2 P (B” ( D…  (  ”`*  )™ ¢X×b°lE‘"ªn•ˆˆRL   %™   €(ŠŠ0Í…€ˆ(Ã) $A”Q" ÙM  Q  V   Ž 8x b"@, l@H€ ƒ
+A 
+@mxŠÿÿÿÿ S Nð@ú °aƒaÀÐÁâ  >Ø` ÿÿÿÿ? ~ Hˆ Ha¢ÀPm˜–ÿÿÿÿ S Nðà 	¨ [ 6L , µÁh`¨
+„ Ëâ€e@²!Šþÿÿÿ L8À€? $ [`6Òÿÿÿÿ€³˜þÿÿÿ ¤
+5 |°!ªþÿÿÿ LðÀà €>laØðXÿÿÿÿ? § øð €ôA`
+Ãâ
+ >Ø`@
+Àil ²8ƒ
+„F g°Øà6\ œÁ¦
+ R Î  
+ð`áÀl >8ƒ
+Àl Â Î`!	p˜1 R Î  
+PaCAA  I     ˆ@ˆ	Ca$Q&Ëi&Î3!p&Ð„ šH„‰šTëz&Ø!Ó&[6!Ø&Ü‚Û2mBÐM06ïƒ0ƒ	ÁL¸mÂ qÛË&d ,|À;ø; ƒ6€‡qhƒ{H w ‡w¸‡yhƒv˜ {‡
+¯PmÐzPm rp p  s  z0 rÐð  w z0 r  s  m rp r  v@ z` tÐé` t  v@ mq  x  q  xÐæ€ p  q  xÐî€ z v  s  z` tÐ³ r€ J’B†Œ” 4B˜œ"¼9]žvŸ};(àq      €à ` õ‘Á0ŒÃ         ;¨QðŠA       ø  ØA…Ccï0       Á  ÀÊ¾c€‡      >  vP-AÃ@      |  ì âÂ+†u      €à ` õ1¼Ã         ;(ßÐ†¡       ø  ØAá \ B8       ð °ƒBÖ@†x      €à ` EO¿ò0       Á  Àj¶Ö@æa       ‚ €”…Á2ÐÃ         ;¨3ƒa0‡      >  vP¥6
+ÌP      |  ì P®˜¡       ø  ØAµÞ4ƒ=      @ð °ƒbÁ€& !      ø  ØAeð9Ã=      @ð °ƒúË€†á       ø  ØAgà;      @ð °ƒ
+Ñà{|      €à ` ¦:      @ð °ƒ"ÕÀ+†v      €à ` %®AZ B8       ð °ƒZáà/ !      ø  ØA©vðAC>      @ð °ƒJï€†!       ø  ØAµxàƒ;      @ð °ƒZó`> !      ø  ØAù p#€  €    |  °Vâ!  ±„D °ƒ²U!/ !      ø  ØA½° €  €    |  ì þY 	@   @    >  †Tÿ-˜… S         ðCª²¤
+         à†Tw/<    €     À ©L_°,          €Rñ¾`\@         0¤ÁÁ€          >`Hÿ‚•         |ÀÊ G         ø€!
+Ö          ðC*5     @     à†Tz80         À ©Lq`<          €RÉâà L  €     À ©@tˆÀ     @     à†T1:<a           ðC*0:1 À        ø€!UŸÍ          |ÀJU‡ˆ€          >`Hµ«CÂ         |ÀŠ\ §€          >`H%¯ƒc@          0¤ÙÁ9          €R¹ì h À        ðC*¸–4          ø€!ÕÞ™          |ÀŠv 1P          €RÙï€p@          0¤òßÁá€          >`HÅÂ[´ L   €     À ©ðz€8          €R¡ö@    €     À ©x{¨8          €RÅ÷q@          0¤ña{          €RõøÁ   €     À ©ì|ˆÊ     @     à†T§>ÐG @         |Àj	I€          >`HÕŠÅ         |À*	2           €R•$¡p 0)        0¤zIB«          €R¥%Qq@          0¤òKGâ  "         à†T¶K4         À ©Æ—P8 ˜       €Rµ/aÙ 
+        À ©F˜ ì €        à$6>ª  È %  2˜LŒ	&GÆC"F J1 ÀJ3 $Š5 Ê8  J23€¨ `€„,@‚J       F±º46º4·9JÆ­2¹7¢4»´¹´7·"9¹79ÊIJF²4»´¹´77±<½2¹7ÊBJ§CJ’’D Å_lý‚‡'ñ!ÔÎeXÍ˜5KªsÑº:hvÜ¦?ï"3	oÃXQGq'àyì?€¥˜œ†ø
+@š’úæíŸþ\6¡‡6¬$:Ä®ÝÁMjf£p¬7WyGHd®€é-n-)¬p'æÚƒXp´@:óÂeFž«¤tQ:á¹à@æø*æ¾ËVÅ¨À`
+€«X®p‹	–®baÉ^ÀU,6Z¸J†BîzûKGËËaò\ *‘t$< T–      0"ˆÕ¥±Ñ¥¹ÍQ22HÕ¹Ñ¥µ•ÉÉ½ÉQNR2%¹Ù…±¥‘¸Õµ‰•É¼™Ð¡É•…‘Í¹€P¡¥Í°¥­•±å¤¹‘¥…Ñ•Í„ˆÕ¤¹8Õµ‰…¹PR:Rº¢¥ÑNÏçi÷TtÛÓò·»]vÓu ¯Ö	Ã9ëmq¸è¶ã¾ßv8íþ~c¹0ÎÎÑa¶™þv—¿æðœ.”ÙcÂlŒ£+©Ã¯Ì|Ùék&ßY[±Ø,VŸÅfr
+=ÎƒÑ¦UM‹ºÓQZ»Œ›Øû»yd¾£D¢u•ÆœÈàT†Žæ°ç)={oÓÞgf,Ö‚ry8ŸD3Ó²blxk×éa1»|
+³Ógw™\ÄãñxJÆa÷‰ª»Åo<(,—‡ó ³üÝAóO±º<¦ƒÒnúäÓÓö2Èf×Ë.ˆŠ.ƒÞbuyL µÃyqô6ƒÂ rÚl.ËËn:ˆž‡—IQ2 —Ýv×øížÓç`PzrV™LPÚ
+ËËaòwüvÏé`Z 	*+       
+ÜêÚàò(ÜÈÂääÂò(')]ˆQ>(Êåo9h,/‡éi÷ÍÓÑo7ˆ^‡³Ë ³üÝÉënzº]•ñã2œž~»Aaù¹Þ.»ésjxîz[vßò²k¯»†Ðêðí¦—ñtÐ[¬.é 0ÃÃ`0,6‰³b˜ƒùÈÉV $¨      `D«Kc£Ks›£dT°
+c«++’“{“£œ¤düp+;
+£K³+!Kk+s›K{s›q{£	cc{»+#£,¤t:¤t¡'S Ò      €A¬..ÍmŽ’QÁ*Œ­®¬HNîMŽr’’q+LN.,$m„îí
+D,íl ,LNÎe.M¯D$LNÎ…Œ.®Ì%®¬m.M¯$m„-Lî¬L„-Ì
+„­¤-/­­®
+îmn.MŒ­d.M¯Ì…²ÒéÒ… ´@‚Ê%       F±º46º4·9JÆ…¦²¶7¹¼"9¹79ÊIJÆ“ 6¶·±0º´77³°4¶228¹7±01¶<º·7¶0¹³²ÊBJ§CJ    ±  Ù   3€Äáf=ˆC8„ÃŒB€ yx s˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp { yH‡pp zpvx‡p ‡Ììá0n0ãððP3ÄÞ!Ø!Âaf0‰;¼ƒ;ÐC9´<¼ƒ<„;Ìðv` {h 7h‡rh 7€‡p‡p` v( vøvx‡w€‡_‡q‡r˜‡y˜,îðîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒth x`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v` {h 7`‡wx x˜QLôðP3jÊaè!ÞÁ~ä¡Ì!ðaT…ƒ8ÌÃ;°C=ÐC9üÂ<äC;ˆÃ;°ÃŒÅ
+‡y˜‡w‡t z( r˜\ãìÀåPó0#ÁÒAäáØáÞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´q v` q‡qX‡ÛÆì`íàð å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼pp wx z zH‡wp‡Ëçï0áàé@é å0Ãs¨ w‡_˜‡pp‡t ‡tÐ‡r˜„A9àÃ8°C=C9Ì@Ä Ê¡àAÞÁf$c0áÀì0é@å0C!ƒu sH‡_ ‡|€‡r˜±”<ŒÃ<”Ã8ÐC:¼ƒ;ÌÃŒÅH!Baæ!ÎÁRfLg0ï ïàïPô0é@åàæ áÐå0£@ƒvh y‡R¸Ã;„;¤C8Ìƒ„9ƒ<Ì<„Ã8”ÃŒK
+Ü¡ÚAÂáÊÆ¡àÒáÜáÞ¡èêf8k€åðìÀï0óôP y      rH Cˆ	r2H #Œ‘‘ÑD (d<12BŽ!£    branch_weights  #Ä.Œ ¼0Ã   ©  -   
+
+r(‡w€ zXp˜C=¸Ã8°C9ÐÃ‚æÆ¡
+èAÂÁæ!è!ÞÁ4ã`çPá ä@á çPô°€ y(‡p` vx‡q z( rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaÐ¡ÈaÂØaÁô áPô€
+ˆu sH‡Ï8¼ƒ;ØC9ÈÃ9”ƒ;ŒC9Œ=È;    Ñ      Ì<¤ƒ;œ;”= ƒ<”C8Ã   a   +  L,      Œ Q@ D	LA!PÁÕ@T`@Ah@Áp Q# Ô ŒäéY–±Žþ.ù  ñ0    "GÈQ&Ðø   *A3ñiuñ~  _ZN5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29_ZN5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29: %excinfo_ZN5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29: %retptr_ZN5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj_ZN5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj: %excinfo_ZN5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj: %retptr_ZN5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj_ZN5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj: %excinfo_ZN5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj: %retptr ê&D/L_X!DÅŠAŠŒÃ+
+Y1TT²b°(e…p-+ìbVÙÕlœ
+Cð@Œ³ªIÚ L    3±
+£0A»0
+3k@ì)ÌD¬±
+¤0q Ä.Â°ÌDà±
+¤0l@ÌDä±
+¤0l@ÌDDÄ.Â°t0»@
+ÃDàÀL„»@
+ÃD
+0»@
+ÃD 0Ñ»@
+ÃDàÀLDGì)ÁC 3±
+¤0l@c@ 3±
+¤0l@ÌDà±
+¤0l@e@ 3{@ì)ÀˆA„ p¾P ©]0Épƒ Ì2C0ÐBÀ…  \ p¡ðÅÂÁ°¡ rA ³AÂAg	 ] ÐpÃ´7Ü Átƒ.Â,ÃA#‚`ðô  y0š³GŒ&Àˆ„ À=t0ÜøÌ2FàA( †‚€À°x@ Ã€¡ð à1Àƒa"Ðð ‚äÁ°0b@ !–OŒ@‚åÃ
+Â Á,’€­àB˜Ë0l@¼B@ ³Áˆá„ \`aÄ°
+¤A ³Áˆò€ ``QìA ÁˆA€ d`
+ðÁ ‚Áˆ l`á l°C0
+ÃÄà„5…a"x`Ø€Xƒ‚ ü°¤0l@ @ þ@`Q6 ‚X   ´)A,À°Ñ¡@ þ@hƒS6 ‚T   ¸A)A*€?Þà†
+ˆ€Àp@
+ÃD 
+0b`D v0¦p ÃÄ„Ä Œ‚Gw0b@  eà# ‚``ÁÅˆ3 ÈK¼DÐÁà)¤B0bP  \K#…‚`ÀÍDŒ‚*äÁˆA€ dm! ‚§Ì°! ®@ ÃD\0b@  V\Œ ‚Ã
+‚+ Á,ƒ²#†‚`pÉmÃ„8ØÌ# ‚`àµÅŒ ‚×l0b€< ]²€ w0bP  ]ÔÂ³p# ‚` ÑE0b @ ]ÔÂèÁÜÂ°¡ øAnaØ€Ðq €a"Ðð ÂÔÂ°¡ n@ ÃD  à>¸…a"0 ð BÐÂ°± 	Á€?ü †
+ˆàÀ
+Ã„€?@Á†
+>h`Ø€ø€ †
+ˆ=XÀ{à
+ÃD°
+à>à…a"X ð BøÂ°¬}à
+à„>  ø-Œ ‚A…‚9ð‚,Á8€?þÀ†
+ˆ À `
+ÃDÐà„P°…a"€ ð ‚(ØÂ°˜Œ‚ü„8ÌÂ°1
+=1 #…‚`ÀÁÅ,Œ ‚A¨Åˆ€ X¬1bÀL r dÁ
+¦P
+4éŒ ‚—ÂˆA! poQ
+#F‚`` `Aµ0bP  Yjl# ‚`À™5l@ìÃ€?ö!†
+ˆ &ÀüpÃD  à„~H‡a"X ð ‚?˜Ã°àøáÆaØ€ò ü ã0l@ù@ þ@	t6 }   ˆ9<ÀˆA€ po³A8#  ö`ø¹øˆ¡(’_ßum®Ë#ÀCøõ]ÛÆpø7¿û
+aûZDLÏùñ ‚rÛ¸ (·Í[z áç¸nÄ„oë¹‰0ÂüÒä<ÒMïÆ7‘á
+ Ð4ÄòQ`~m¼…Ÿ×>b§Ë€0¿49ä×vPøvï#‡`NäÍàÍ€>ÑHá#…8@døÒ<Ä?aaÐ„ß¸5 ¾Íë—NäÍàÍ€>ÑHáÍ€Æ@øyŽÛh ò ‘!Ý4o´„_ã·Á ~¾ã– EÄôL‘ (·mûñ ‚rÛº• >®Û&P‘á
+ Ð4ÄòQ`¾îÓ†@ø8½›u@á×´˜i 3 Ì/M@4I~mâ„ß¼åNä
+N3z áã¼nÅ„oë»% ¾½Ûpøµ½û
+aæ„ë¼! 8Ä% MáøµOûÏa²„_ã¸É ~MûˆmÛ„×öˆÁFûD3 …O4RøD3 …O4RøD3 …X} Ó3E~D<€ Üµn÷PDLÏùñ ‚rÛ´½ ~¾Û@ø»s áÛ|mƒ¾p MC,?E æë~m³à0ŒÓø1ùÎc«„ë·4@dø@c,Ä?Æ(‚Ã0NãGÄd¶„_ç·Å ~¾ë¦@ø8ž[ßD†/@ÓËD€ù¶Í ~]ûÈmÁ„oç»
+ ¾­ßGÀm´O4RøD3 …O4RøD3 …ØßD†/@ÓËD€ù¸Õ~Ûf@ø¶ÎŸÁT8‘O4ƒO4RøD3 …© ~Žóö@ø÷m›ßD†/@ÓËD€ù·‘ >žÓ¦w—€4…c¸…ë>r SáD>Ñ>ÑHá#…P‘á
+ Ð4ÄòQ`~îÓÖ@ø8¿€°Ñ¶7‘á
+ Ð4ÄòQ`>múPDLÏùñ ‚rÛ¸@døËƒX`@D†/@ÓËD€ù¹_Ûg@áï>Ru áß8nã„ã¸­ ~žÓÐóKMÒMë7ÐNäÍàÍ€@ø÷­Ûw áã6mË„oó´µ ~®ó† EÄôL‘ (·m›{ áç;m©„ß½í~nûˆM þÛv@ø8O[o âï>â#>böPDLÏùñ ‚r×¼±>Î×v@ø¶Þx áãvmôPDLÏùñ ‚r×¸Å~móþBœS8‘O4ƒoûHaÀ†¯ûˆ˜p áÛºmº…ŸÓ>bÙ„Ó¼ù >ï#>â#–gDÄôL‘i >N÷æ@øxÍi@òH ð7Ý[x áã¶n… þð V@ø7®›t áß8}
+OáD>Ñ¾íÍ€ö°<ÒD<’_ßõmÊ„oï¼•$4t×´u þ­ÓþBœ€R8‘O4ƒæ@øvoÛu@á×µ  1     [1†-C¨A¶ehAÛ2À0lä Ù¶t [;@¸-ƒ(Ã–áÔ Û2Äƒ0læA
+2        a      `
+  
+   Œ Q@E@Ñ@ALT\”Âh@AH	5@Àh   ñ0     †`    3 ±
+¤0»@
+3 ±
+¤0»@
+3 ±
+¤0bÐT `ÙJ0LAB0ÜüÌD°±
+¤0ÁÄ.ÂL@ì)Œ ‚A%‡1ÃD€ 0ÁÄ.Âˆb TótY3ËÅ@ ÃY`òÐÉ †< òÀÉÃÇÅ@†‚= ƒY†FŒ
+Á Òadb–    #ˆ‚`PÝ]4b`D bâ
+„¤£ "Ã
+AÃ
++„ÁÂÎ2F0b`\ a #³9 ñÂ# ÄÑP_ Ld@AD|P•ñÂeDd–!8ú 2bP  c ÁpC 
+`0Ë $ÁˆA€ päàÌ#…‚`@û Œ‚·Ã,2P	‰9# ‚`Pû0ÜÐÌ2,H@e ƒ A0ƒ†‚[ ƒY††	F
+	Á€DB1($N$†Y‚f "zXF Á Db¸!Ø0˜ep€Ö  # ‚`0(7¾ ³ÐŒ‚¤„0bPH \J³Ð@E$<"áŒ ‚A¤ÄpC `0Ë!Å@F
+ Á`^"nÊf&)1($2€	aÄ @8˜f	¦ŠH`"1  ƒ2€‰á† À`–B‚ÄA0¨È‚\Aü`Ä`Â@¤² ƒ98ƒ>Q(ƒ1ƒ¯Ã"e : Ù@|p ¤@@| ¥@AD|° °@AD|Ð ±@@|ð ²@AD|
+³@AD|0
+´@AD|P
+µ@ADF
+ Á€ƒ	=n˜Pfª,p)ô n@f.+10$3@
+Af	°ãA0ƒ·
+Û˜%À* Á"‘kÄàÈ@Î -lÃjcØ€`Œ |À
+»0l@ø¡vaØ€,ð‚+”Ã°Tà
+„W(‡a" À°PÃD0€/b¡†
+ˆ@" _ ÈB9AD ¾@˜…r6 ˆ F	Á 
+â‚wˆ	eÄ  @8°ƒY‚`Ä€ @Ò .H
+2šÃ
+N˜ÁhÂ Œ&Á,ƒ¶
+D2b`  f`C@iPÑ„@M†ƒ A0ƒ@npf:/M`„ƒ A08ÐP’`–€¨ 
+OØ†ž ƒY†à
+FŒ
+Á Tƒ7Üc– 10"5ø
+Å1($î/æ`–€1($Î/†Y‚   Ö  ÷ñD3E˜O4RøD3 …O4Rø„ïûD3 …_ûHáÍ€>RØgÀàß·e (Õ(À0DµmÄ„_Ó´å ¾mß†HT£ ÃÝg‘D3E˜O4RøD3 …O4Rø„ïûHá×>ÑHá#…  ~­ç~ãLv HT£ ÃÕü=xD3E˜O4RøD3 …O4Rø„ïûHaÝ„à4ƒE>o´‡¯×~ãL¦0øunÂ‡ßß~ãLæ HT£ ÃÕ¸E $Õ(À0D¼ >oû´½~nhÀàß¸•8>Nû… ø¸¿8À`éŠD5
+0‘MŸÇÍa>ÑHáÍ€>ÑHá¾ïÍ€~í#…>ÑHaƒo÷¦0ø»n×ŠD5
+0Q]| á×}oâ†_ë¶O[} áÛtnø„o×´ù>Ÿû3ÝDÍa>ÑHáÍ€>ÑHá¾ïÍ€>ÑHáÍ€w±D3E˜O4RøD3 …O4Rø„ïûHá×>ÑHá‹DØh€ãã´_€Oû‹G1 D3E˜O4RøD3 …O4Rø„ïûD3 …O4RøD3 …O4R˜{ á×}n‚¯›kÀàã½9 <~}×~! ~í/0œÁE4S„ùD3 …O4RøD3 …å¾®û´Õ¾žÛt@"QCÔ[pÀà÷¶Y D~}×~! ~îÓþâ ƒ™ (Õ(À0Dõní„_÷¸½ ~Ýëf0ø:oì„_ó¸Ý¾Þû3eÀà×µå)ö
+‹#Qql@4S„ùD3 …O4RøD3 …O4RøD3 …O4RøHa¦‰D5
+0‘}l@4S„ùD3 …O4RøD3 …Oø¾O4Røµ>ÑHqÑLæÍ€>ÑHaÆ„_Ó÷%€ÑLæÍ€>ÑHáÍ€>ÑHá#…= $Õ(À0D»AþnÅˆ_Óµß8“) ~m×–ÐÃ8“ï<V HT£ ÃÕºÙ ¾Mï¶ HT£ ÃÙ¶…þÛr á×¶} ÑLfò„oÓöA„ÑLæÍ€>ÑHáÍ€>áû>ÑHqg@4S„ùD3 …O4RøD3 …Oø¾O4RøD3 …¥@>Nû… ø¹_û‹0øy~l@4S„ùD3 …O4RøD3 …Oø¾~íÍ€>ÑHaó„oÓ·A <~}×~! ¾í/0\€"8ã4~DL¦ HT£ ÃÙµi D~}×~! ¾îÓþâ Ã9ÔÑLæÍ€>ÑHáÍ€>ÑHáÍ€>ÑHáÍ€>ÑHa–„_×·q¾ŸÂÍa>ÑHáÍ€>ÑHáÍ€>ÑHa°‡Ÿß~ãL×ÁD3E˜O4RøD3 …O4Rø„ïûD3 …_ûHá#…V0øvnª‰D5
+0nÌ_ßµ_€Oû‹ÖHT£ ÃéFðøõ]û… ø¸¿8À`ñ„oÓµ]Ä% MánÀàïµ‘$Õ(À0Dµíþ¾û3Ùj äã´_€¯û´¿8À`›ƒoÓ×ðD3E˜O4RøD3 …O4RøD3 …O4RøD3 …O4RØv€"QCTßv@ø6Ýß€C4S„ùD3 …Æ0ø|m¢ƒë¶g<Ø¯XÒ! @dÐ>EÆHT£ Ãå–€ø5Ýû3™c€àçö@øµ^ âÛöî7Îd³ƒ¯Ó'°Ía>ÑHa’‚ßßBÍa>ÑHáÍ€>ÑHáÍ€>ÑHáÍ€Ö ù8íàë~í/0Xx á×únã„_ïýU˜ÑLæÍ€>ÑHáÍ€>áû>RøµO4Ry€"QCTç†@ø5O›l@áç´O} áÛ4nÃƒßï·±D3E˜O4RøD3 …O4Rø„ïûD3 …_ûHá‹DØdÀà×´éö‘!Y áÛ5nžˆD5
+0ÑI¨ÑLæÍ€>ÑHáÍ€>áû>ÑHáÍ€>RÜAG4S„ùD3 …O4RøD3 …O4R\E4S„ùD3 …O4RøHaÕŠD5
+0QMÛoÀàó»I <~}×~! þí/0XoÀàó¸a D~}×~! ~î×þâ ƒ¡ (Õ(À0DuoÇ…ßó>m§Ó~! ~îÓþâ ƒ! ~Mó§‘D3E˜O4RøD3 …O4Rø„ïûD3 …_ûHá#…é ¾mã¶@ø¶­w@ä×wíàë~í/0\†Ía>ÑHáÍ€>ÑHá¾ïÍ€~í#   1     [G¶“0l<aØ2°0là@¶y [†>†-)Ä–„aËð
+±e˜aØ2è‚@l|B¶d!      a   7  J,   
+   Œ P4PR0TPVpPD 0@ë ±3 #    3l@ì)ø!xü <þ@ ?ŠÇÆã„ãñ òÌD Ä.Âˆb Tò hÐ3l@x@ £	0š ÄhB£	0š £	d`Œ&Àh‚ŒL‚´R‚XaGA”Œ) !
+ D„¨ˆ¢ BTDˆŠQ!*"³
+_Ì6I0Û$ÂlC³
+ABÌ6”AÌ6I0Û0Ål(ÀlC ³
+C`ÌDÄ.ŒÂ°ˆÃ 7\â ³BŒ‚gÂˆ€ ¤?ÐUÑ„€nÊÁF`4fˆbè`p8 81($ƒ1Ø‡¶1( n‚ƒ A0àP"1($N’Y!‡HF ÁÀF¢
+2š£	Â0bP  cÃ
+A9€Á,Ã£	Ž0bp  gÐÌÌ@ÅpC`0Ë0$Áˆq „ÁM¤…^Ì#F‚` ,¡#…‚`À±„Ì#…‚`À­Ä0K0„   ´   70øxn¬ÒHD4ƒÿ ÑLfÀø… øº_ûñØpÀàëõ!PD3E˜>RøHáÍ€GàÍa>RøHá#Å%PD3E˜>RøD3 …wÍa>RøHá#…Ö×ÂD¾4EÈ@H&0øyo¦Žoç~! >î/0Xf€C\S1ø0v@N3ØeÀA\ÒŽµ<H#ÑD~ƒL#hÀà×¹­@H#ÑD>C0HS8&à DD1øÒ<„é	¾m´ƒÓgÍa>RøHáÍ€FàøvîàÛþâ ƒ=(~! ~íÄcµÒHD4ƒ/M2’@¾û… ø¹Oû‹0ø7nŠ_€oûñe ãàç~íÄc˜qM LÄà3ƒ4…cºƒŸÓÖ'ø¹i<Ä5E€0ƒ/ÀC˜oÀà÷· ~Î[lÀàßº…~­j äÛ¹_€Ÿûµ¿8À`Äƒ¯ß†0ø<}ÑLæ#…>±H„E(~! þíÄcÉ‡Ï×~ãL–0øxo¿ƒŸëÆ0øµmžƒ_ß€Ía>R˜rÀàë¼Ù>n›qÀàï»‰8¾û… ø´¿8À`›ƒ_×öÐ DD1ø06àøvîà×þâ ƒá>ÎÛgÀà×¸¥@¾û… øºOû‹V0ø:nŽ‚¿›j äÛ¹_€¯ûµ¿8À`’Š_€ûñØlÀàß¼õ4‚Ã0NãGÄä;¹DH#ÑD>2Œ„d„U0~! ¾îÓ¾A< PÍa¶0øùmÀƒŸïv0ø;o“Œ_€Ÿû´oå	~m¼ƒŸç' Ã8“ñ	>n¥Žoç~! þí/0Øžàß  1     [R†-ƒ*      a   Ê  P,   
+   Œ P4P%P0eP5PüÿÿÿÿÿÿÿÿRÕP•@Ô    ñ0    "GÈQˆú   éqø! _ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE: %arg.sched.4_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE: %arg.result.4_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE: %retptrllvm.loop.unroll.disable  +¥X1,Š±b`”cÅÐ(È
+Á¡Vµ!X6Ì¡a6Í²!H   $EÄCADˆŠˆ#ªˆ‚ˆ7”Ì2BN´Ž@Ø*
+ B@f	†¨ˆä x'‡(sˆò†E. @Ï`äF
+ Á€f&F
+ Á€fá%hˆˆ#‚ˆ\0Äc Ã
+B$Ó
+g Ã
+˜Á,ñŽ@ˆG i@AD0¤¹`ˆ
+Ú †„M¦â@†90ƒY†â	ŽQŽhæ€‚YÆ²ÔÁrÖˆ#„àÈà
+à¦@‘‚¸ ƒ=€
+ô@‡#> ƒ`–!9‚ö 1àƒ˜%@*¢R@„c Ä:F-Á â‰ ¦;pB@ #ˆ‚`PõD`
+8!¨ƒD
+A0¨|"8…*ØÁˆ¢… T? ‚¥ Ž@î`Ä ÑB*°RáÚG x0b€h!UXª€ñ#‚<1@´ƒJ,‚UÈúÀŒ Z‚A5+h~à„`F-Á "‹ ¶?pBÀ #ˆ‚`P•Eà
+(8!èƒD
+A0¨Ì"x….øÁˆ¢… TgÀ‚'
+Ž@þ`Ä ÑB*´báG  0b€h!UZ² ¤à„ F-Á R‹`Â ˆÂˆ¢… TkÐ‚˜‚#‚Q1@´ƒŠ-‚ZƒSpB@
+#ˆ‚`PµE`
+d€
+Ž@JaÄ ÑB*·n¡RÁ)Œ Z‚Aõ.˜*8!8…D
+A0¨à"È…3XG ¨0b€h!U\º€¬à„ F-Á ’‹`Ò ¨Âˆ¢… Tsð‚¸‚#‚U1@´ƒŠ.‚^XƒWpBÀ
+#ˆ‚`PÕEà
+l 
+Ž@ZaÄ ÑB*»~¡
+bÁ+Œ Z‚Au8¸,8!x…D
+A0¨ð"‡7˜G °0b€h!U^â  ´à„ F-Á Ò‹`â ÈÂˆ¢… T{ƒØ‚#‚Y81ÀnÊf$¨ xÁ0á†48 0˜e`”`–`¨ˆ¦…”
+`ZeÄ ÑB*ÑÖ!zÁ.Œ Z‚A5;è/8!Ø…D
+A0¨H#h‡=øG ¼0b€h!UiîÀ àà„ F-Á 2àú øÂˆ¢… T§Àƒˆƒ#‚_1@´ƒ
+5‚xøƒqpB #ˆ‚`P¥F  @˜¬8A‡áaÀ`–Y‚Ž=
+zHèan…z ƒY†§	Ò ½ÁàtG ®à„@˜%p*"˜hg  šÁ1@´ƒª6`xpBÐ8à7ÿ ³à9ø7ó ³Â„ M  æ@øu¾u@"	DeOm[~@²H‘T·gÀàÛº¡ <’@Tñè>â²˜| ƒ4CD>ÕD>bß‰$•A<ömŸ…¿ã>bûŠ$•A<¶X{ $	DeO]ûˆO<Èb©†ß·1 `°‰ŸÓ·më>bïÍ"E>Rù
+qMö~ÝV×¶O4Rø”ä?qÀ@D~CX>bÅŠ$•A<½˜{ $	DeOmûˆO<ÈbªŠD5
+0Ñ][D†dƒŸÛ‡ðlumûD3 …OI>bë$•A<½øÄƒ,Æ IQÄSÓ>â²Ø C\È$8Íà7ÎdÙ‰$•A<õn–Æ L€_Ût@"	DeO]w@"	DeM[s "	DeOn®†ç½o rM€LDdÌˆ$•A<ø8…ù3`þùÏašƒoßö0øµmÄŠ$•A<¼˜v@"	DeOÍÛm@"84ý0™cÀà×µQ(0þ3E~m¤†oÓ´4!˜˜¶·7¸2¼4:—:7¹¶±¹¹0—4‹ü·ù g˜ÇgœÁoœÉG¬?`"dñ‘‰ˆ|yüÆ™|ÄÊ˜E`Ÿq¿q&RBÉÀÄÔ¸°½½Á•á¥Ñ¹Ô¹Éµ°ÍÍ…¹¤¹°½½Á•á¥Ñ¹Ô¹Éµ°ÍÍ…Ùu@"	DeO›s "	Den—Ìâ84qÕüD3E˜¡(Õ(À0Dvoð‰$•A<6o±Ê5E 2‘´ÕµíÍ€þùÏá#¦€,Rä#•Øj€áß»í#f€,Rä#•­Ÿ€"8ã4~DLvà,Rä#î#>ñ ‹~]Û>b›ƒoç,Rä#î#&HQÄSÓ&°,Rä#•ß×dÏˆ$•A<»‘ 4‹ùH…ûˆO5Ñd[]Û>ÑHáS’ÿDÄA ùˆ© <’@Tñð>â²Xk€áã9ï#f°HQÄSÓ>b{…4dÂŠ$•A<ºX|@D<Èâ#ùóø3n@C5‘³,?2‘˜r "	DemãLƒLDä7óø·A<‚¾4ÿL‘_ß R8‘8v
+ÞV×¶O4Rø”ä²øOD0‘XrÀ!	Deñ 4‹ùHå7Ä5ùÈ=$¾à4ÒP„-  ’@TñÜöpø>žó>b’…_óõnÇ‹$•A<uí#HQÄcã†HQÄSë¶HQÄS÷HQÄcç€HQÄÃ[w@"	De]p€±H‘T6PN#M–ðHQÄ³ûˆO<Èbƒ_Óæ0ø9n¢KD ’äKTà#6`øußûˆ
+ (’@Tñì>b§ˆD5
+0‘•¾_÷½ÜµÕµíÍ€>%ùˆO<ÈbÞ‰$•A<¶møŠ$•A<µœµÕµíÍ€>%ùÄƒ,>r
+ÞV×¶O4Rø”ä#>ñ ‹ÿDÄA rÀ"	DeOmûˆ™$¾÷ö­ûˆ±8H’/Që>bzÄ€0Ò„ÁV×¶O4Rø”ä?qÀ@D~CX>â7„e•Æ L€o[t "	DeOoÖ‰$•A<5nŒÉâ8àPÍd¡†_×·Xu@"	DeO} 1  B   [
+ìxhK¡m)ÆàxhKQÇƒD[
+P8 DÚRˆÂ!Ò–‚‘¶¦p@ˆ´¥@…B¤-…*"m)Xá€iK
+ „H[
+Y8 DÚRÐÂ!Ò–Â‘¶¸p@ˆ´¥Ð…B¤-/"m)Àá€iK! „H[
+r8 DÚR˜Ã!Ò–‘¶êp@ˆ´¥`‡B¤-<"m)äá€iKA „H[
+{8 DÚRàÃ!Ò–B‘¶üp@ˆ´¥H‰B¤-ÅJ"m)Zâ€iKñ „H[Š˜8 DÚRÌÄ!Ò–¢&‘¶;!5[Š³8 DÚ2¬…ä     a   $   D,      DE%   Ã
+ ³ì@#‡‚`P o@CÌ2A0d ÁˆA!… pp`l8   
+   '€ø·O4RXžà× Ã8Ó
+,þíÍ€>RŸàã  ø7    1     [†@¶†0        a   â  O,   #   •À@ÁDPAXÁÿÿÿÿÿÿÿÿ@”A
+P7F€£+Jªí¦"HŒ€ ‚ ‚ c ‚ ‚ ˆÿÃ‚ ‚ òÿ0F ‚ ‚ ‚ô?Œ€ ‚ ‚ÿc ‚ ‚ (‚Ä‚ ‚ ’ 1F ‚ ‚ ‚ð?   ñ0  p  "GÈQˆÉ   -²#dÂ#6_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd: %arg.sched.4_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd: %arg.channel__array.4_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd: %arg.result.4_ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExd: %retptr  +¥X1,Š±b`”cÅÐ(ÈŠÁQ’
+Á²!`6Í†Áaš
+ƒ³4ga    ”EÄZEADh‹ˆ#¼‹€8ÁË(ˆˆ#Ä@£  Ž@Ž‚ˆ8À€‚ˆ8
+>
+ â4
+"â5
+"â7
+ â7(
+"â90
+ â9@
+"2ÜÀÅÌ2Bà„;h
+ â„<˜
+ B{ Y‚a *"w~ÃI!ÊÂ@. @¯ qÂDäO ¹…G |9'G p¹G l1(€:è‡½1(€:è ½1(€:è‡¼ ("Ž@ˆT‚ˆ\0ÄpCp
+b0Ü ÅL7ÀC Ì28D_”éEyÈd èAÈd (2»  ‘‚8Á@³Å@ -ÑT ‘Í@EÄ#ÑTDl@ŒD“AW—r` È,1P©F10œ¨ÐUÀ‘A qAÐˆA„ x8œrI Gq8È
+o@#‚`àùDpB˜ƒ³Dm°øƒÒÉI (q\2bP !Þh7¨ƒŒ@‚WÁ
+\ p;È,sÈ;ÈˆA„ xª\àp<È,sÐ<ÈˆA„ x®\ðr=ÈˆA„ x±\0Àò ÈƒÌ0‡íƒŒ@‚gÁYý #‚`àáFpC ü\Ð2KÀÜ'2bP !^o\PrIÈˆA„ xá\À(˜„Ì0-¥ˆA" ˆÂâ=˜
+‚AW§A\°4Ü#þ RdØ€‚ n = ƒY†Æ0l.Æ@
+,áSh‰á†R0
+3˜e(œ ßá,``¸!	0˜e† Ž  †ø¹­û”ä#†0ø÷m†Œ¿çµ¿>%ùˆa
+(~çµOI>bÂ„_Ó´¹ $¾^Ó>%ùˆé 4~]Ó¹¿>%ùˆ
+$¾Ý÷>%ùˆ­ $~^ß>%ùˆu
+(~­ï»OI>bŠ_ß}ïS’Øl€1 àãv0øwmó_Ûµî/„OI>b‹‰Ïã¶OI>bžƒ_çÆGÀ˜¨€"	DeOï#æ( øõÍ÷>%ùˆå@dHv ÀøÏùú<[]Û>ÑHáS’˜ @â÷½îS’XnÀàß¸5
+4~}ç»¿>%ùˆÉ (~mÓ´OI>b¥q!“à4ƒß8“‘~ÝÛ}€â×v_û”ä#Öø=Íû”ä#Æ`Àø·í~Îm€1 à×0øµnõ_Û:î/„OI>b“Š_ã9ïS’˜s@ããvnó½ß8“˜z@âç4íS’|@âë:ïS’X{@âçýîS’v€áÛwï#6*ø6¯û”ä#* HQÄ“ûˆQ
+(~ï¸OI>rNáD~à˜¿Dþs˜jÀàÛ÷!([ç½OI>b–ƒ_Û6@ø5­Ûk@áÛº­Û{ â×¸à>b¤„oÛµ
+$~¯ë>%ùˆU ¾Î¡€â×´û”ä#¶ øumÛ>%ùˆ <>~×6¿Û=íS’Øe€2 à?Sä×V0øumÃ„_ß·•<‚¾4ÿL‘ŸÛr€á×8ï#¦0ø5n¿ƒ¯ãø:_û”ä#v) øuŽß>%ùˆÕ0‹ã<>ÒÄeïVøøžû”ä#Ö€,Rä#•Ø¡@âïüíS’œAl½^ûD3 …O4RøD3 …O4RøD3 …O4Rø”ä# PÍa&`Àø¹å (~Mó½OI>bŒŠ_ßøíS’Xr€á×tï#† øõMï>%ùÈ	(‚Ã0NãGÄd¬Æ L€ÏÛgÀ#8áKñøÏù·Á(0þ3E~n«Ê L€ÿL‘¿›kÀàÛ¸¥<‚¾4ÿL‘¯[oÀàëµU
+HÓÒá,ƒŸû¶OI>bÍ†oã´Ü²Õ¼^û”ä#— lõm÷>%ùˆ!
+0þÞ÷þBø”ä#6ðNDøÒD<þ3E>n¡Ê L€ÿL‘[l€1 àëöðøvoßõ~Û¹OI>bÈ„_ã´m
+(~ï¼OI>b×ƒ¿×0ø=o{…4dÜÉ"E>Rñ>bÒ„_Ó¸™¾MA¶ÕµíÍ€>%ùOD0‘Øy@âã|ïS’˜§€C\È$8Íà7Îä#æðø6Ÿßu~ÛºOI>bÄ„_ß¸q
+(’@Tñè>bæ‰ïºOI>bÇ„_ß¼Y
+,’@TñÔ´Øf€2 à?SäÛø8oû”ä#ÖðNDøÒD<þ3Eþ~HáD~à˜e<‚¾4ÿL‘_[  ã÷¼í/„OI>b‰‰Ï×·OI>bÿ‰ßß¼OI>r‰/8Í„4aŠ_ãuîS’X¦€â×ynû”ä#ö)øvŸû”ä#Æ0ø:m¨Æ L€¿›v@"	De˜ ã÷6î/„OI>bá‰ó·OI>r
+ÊV×}îS’˜oÀàë¶ ~¿}€â×6Îû”ä#Ç m5¯÷>ÑHáS’˜l€2 à?SäßF0ø5mÌKD ’äKTà#F@ø5½›r€á×øî#¶ HQÄ³ûˆñ (~]ß¼OI>bÖƒ¿ÓÖðNDøÒD<þ3E¾mÏ‰ù‚Ó>bä‰ß¼OI>bé‡_ã>â#Æø9û”ä#V(øûû”ä#f øµ½ó>%ùˆE
+4~ßµ¿>%ùˆI
+(~ã¹OI>bºƒŸï¦G#™x@âçôîS’Ø €â×4Ýû”ä#¦) øu®ó>%ùˆa0¾}
+a°õxïo5Íû‹ã<Ä…L¿!ÓOáS’˜¢@âó¶îS’Ü‚²Õ¼¾û”ä#f@øõ½Ûd@²8Î#8T3Yq á×· 1      [
+>8$ÚRøÁá Ñ–b&Ž ‘¶:q@È      a      C,      •  Ã
+Â³ììÁ1 Ä,A 	   '€ø·O4RXžà× Ã8“ñ>î#¶'øøþ
+ 1     [†@        q      2"„%ç	C)A˜d­M¢"…,‚R¬*       e  M  ”h*           L      X       X   U   P  	        3            (	          U       ÿ
+  ¦   ÿ
+  ¦   ÿÿÿÿ&  ¥
+     ¥
+     ÿÿÿÿ,  ·
+     ·
+     ÿÿÿÿ$  Æ
+     Æ
+     ÿÿÿÿ$  Ü
+     Ü
+     ÿÿÿÿ$  â
+     â
+     ÿÿÿÿ$  ð
+     ð
+     ÿÿÿÿ$            ÿÿÿÿ$            ÿÿÿÿ$  *     *     ÿÿÿÿ$  :     :     ÿÿÿÿ,  F     F     ÿÿÿÿ,  R  ®   R  ®   ÿÿÿÿ&   
+      
+     ÿÿÿÿ$  
+     
+     ÿÿÿÿ$   
+      
+     ÿÿÿÿ$  =
+  
+   =
+  
+   ÿÿÿÿ$  J
+     J
+     ÿÿÿÿ$  [
+  	   [
+  	   ÿÿÿÿ$  d
+     d
+     ÿÿÿÿ$  r
+     r
+     ÿÿÿÿ$  €
+     €
+     ÿÿÿÿ$  Ž
+  "   Ž
+  "   ÿÿÿÿ$  °
+  
+   °
+  
+   ÿÿÿÿ$  »
+     »
+     ÿÿÿÿ$  Ô
+  "   Ô
+  "   ÿÿÿÿ$  ö
+     ö
+     ÿÿÿÿ$  þ
+     þ
+     ÿÿÿÿ$    ¬     ¬   ÿÿÿÿ&  ¸     ¸     ÿÿÿÿ$  È     È     ÿÿÿÿ$  Ü     Ü     ÿÿÿÿ$  ñ     ñ     ÿÿÿÿ$            ÿÿÿÿ,            ÿÿÿÿ$  6     6     ÿÿÿÿ$  G  ô   G  ô   ÿÿÿÿ$  ;     ;     ÿÿÿÿ$  M     M     ÿÿÿÿ$  a  $   a  $   ÿÿÿÿ,  …  
+   …  
+   ÿÿÿÿ&            ÿÿÿÿ,  ©     ©     ÿÿÿÿ$  ¾    ¾    ÿÿÿÿ$  Ö  
+   Ö  
+   ÿÿÿÿ,  ã  
+   ã  
+   ÿÿÿÿ&  í     í     ÿÿÿÿ,            ÿÿÿÿ,                ÿÿÿÿ       $      $   ÿÿÿÿ    C      C      ÿÿÿÿ    a   
+   a   
+   ÿÿÿÿ    n      n      ÿÿÿÿ       $      $   ÿÿÿÿ    ±      ±      ÿÿÿÿ    Ï      Ï      ÿÿÿÿ    Þ      Þ      ÿÿÿÿ    ø   °   ø   °   ÿÿÿÿ$  ¨  Ì   ¨  Ì   ÿÿÿÿ    t  _   t  _   ÿÿÿÿ    Ó  +   Ó  +   ÿÿÿÿ    þ  !   þ  !   ÿÿÿÿ      &     &   ÿÿÿÿ    E  C   E  C   ÿÿÿÿ    ˆ  E   ˆ  E   ÿÿÿÿ    Í  ?   Í  ?   ÿÿÿÿ      ”     ”   ÿÿÿÿ$              ÿÿÿÿ    ¿  $   ¿  $   ÿÿÿÿ    ã     ã     ÿÿÿÿ              ÿÿÿÿ       $      $   ÿÿÿÿ    D     D     ÿÿÿÿ    b  ©   b  ©   ÿÿÿÿ$  
+  ¿   
+  ¿   ÿÿÿÿ$  Ê     Ê     ÿÿÿÿ    é  $   é  $   ÿÿÿÿ    
+      
+      ÿÿÿÿ    +   ó   +   ó   ÿÿÿÿ$          ÿÿÿÿ$  5	     5	     ÿÿÿÿ  D	     D	     ÿÿÿÿ  V	  ¹   V	  ¹   ÿÿÿÿ$  
+  p   
+  p   ÿÿÿÿ$  
+  €   
+  €   ÿÿÿÿ$                                                                                                                                                                                                   ]  ’  ”{L   .const.pickledata.1970001407456.const.pickledata.1970001407456.sha1.const.picklebuf.1970001407456printf_format.const.pickledata.1970001406336.const.pickledata.1970001406336.sha1.const.picklebuf.1970001406336printf_format.1.const.apply_halftone_fast_ZN08NumbaEnv8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx.const.missing Environment: _ZN08NumbaEnv8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx.const.can't unbox array from PyObject into native value.  The object maybe of a different type.const.`env.consts` is NULL in `read_const`.const.pickledata.140719074538864.const.pickledata.140719074538864.sha1.const.Error creating Python tuple from runtime exception arguments.const.Error creating Python tuple from runtime exception arguments.1.const.<numba.core.cpu.CPUContext object at 0x000001CAAD3E5D90>_ZN08NumbaEnv5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29.const.pickledata.1970000319152.const.pickledata.1970000319152.sha1.const.picklebuf.1970000319152.const.pickledata.1970000227168.const.pickledata.1970000227168.sha1.const.picklebuf.1970000227168_ZN08NumbaEnv5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj_ZN08NumbaEnv5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj.const.pickledata.1969995095056.const.pickledata.1969995095056.sha1.const.picklebuf.1969995095056_ZN08NumbaEnv13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedE_ZN08NumbaEnv13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExdPyExc_TypeErrorPyExc_RuntimeError_ZN08NumbaEnv5numba2np9arraymath13impl_np_round12_3clocals_3e4implB3v13B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEd24omitted_28default_3d0_2927omitted_28default_3dNone_29_ZN08NumbaEnv5numba2np9arraymath13round_ndigitsB3v14B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEdx_ZN08NumbaEnv5numba7cpython7numbers14int_power_impl12_3clocals_3e9int_powerB3v15B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEdx_ZN8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxxllvm.memset.p0.i64get_num_threadsget_parallel_chunksizeprintfget_sched_sizeset_parallel_chunksizeallocate_scheddo_scheduling_unsigneddeallocate_schedllvm.sin.f64llvm.cos.f64_ZN7cpython8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxxPyArg_UnpackTuplePyErr_SetStringNRT_adapt_ndarray_from_pythonPyNumber_LongPyLong_AsLongLongPy_DecRefPyErr_OccurredPyList_GetItemnumba_unpickleNRT_adapt_ndarray_to_python_acqrefPyErr_ClearPyBytes_FromStringAndSizenumba_runtime_build_excinfo_structNRT_Freenumba_do_raisecfunc._ZN8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxxnumba_gil_ensurePyUnicode_FromStringPyErr_WriteUnraisablenumba_gil_releasellvm.smul.with.overflow.i64NRT_MemInfo_alloc_alignedPyEval_SaveThread__gufunc__._ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac50ef90B3v11B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedE5ArrayIhLi2E1C7mutable7alignedEnumba_parallel_forPyEval_RestoreThreadllvm.experimental.noalias.scope.declNRT_decrefllvm.x86.atomic.sub.cc.i64NRT_MemInfo_call_dtor__gufunc__._ZN13_3cdynamic_3e35__numba_parfor_gufunc_0x1caac529e50B3v12B106c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwaUTI24JtBVoOCV2YU4ogSjUBE5ArrayIyLi1E1C7mutable7alignedExd5ArrayIhLi2E1C7mutable7alignedEd5ArrayIhLi2E1C7mutable7alignedExdllvm.rint.f64NRT_increfllvm.lifetime.start.p0llvm.lifetime.end.p020.1.8x86_64-pc-windows-msvc<string>     ”†”‡”Œnumba.core.funcdesc”ŒPythonFunctionDescriptor”“”)”N}”(Œnative”ˆŒ modname”Œ__main__”Œqualname”h Œdoc”Œ0Semitono optimizado con Numba - 10x mÃ¡s rÃ¡pido”Œ typemap”NŒ	calltypes”NŒargs”(Œ
+channel_array”Œlpi”Œdpi”Œ	angle_deg”Œ
+shape_type”t”Œkws”)Œ restype”Œnumba.core.types.abstract”Œ_type_reconstructor”“”Œ copyreg”Œ_reconstructor”“”Œnumba.core.types.npytypes”ŒArray”“”Œbuiltins”Œobject”“”N‡”}”(Œdtype”hh!Œnumba.core.types.scalars”Œ Integer”“”h'N‡”}”(Œname”Œuint8”Œbitwidth”KŒsigned”‰Œ_code”Ku‡”R”Œndim”KŒlayout”ŒC”h0Œarray(uint8, 2d, C)”h4M\u‡”R”Œargtypes”(h<hh!h-h'N‡”}”(h0Œint64”h2K@h3ˆh4Ku‡”R”hBhBhBt”Œmangled_name”Œ¦_ZN8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx”Œ
+unique_name”Œapply_halftone_fast$1”Œenv_name”Œ°_ZN08NumbaEnv8__main__19apply_halftone_fastB2v1B90c8tJTC_2fWQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0AE5ArrayIhLi2E1C7mutable7alignedExxxx”Œ
+global_dict”NŒinline”‰Œ noalias”‰Œabi_tags”]”ŒXc8tJTC/WQAliW1xhDEoY6EEMEUOEMISPGsAQMVj4QniQ4IXKQEMXwoMGLoQDDVsQR1NHAS2hQ9XgStYwm4ogLE0A”aŒuid”Ku†”bŒnumba.core.environment”Œ_rebuild_env”“”h
+]”Œnumpy”Œdtype”“”Œu1”‰ˆ‡”R”(KŒ|”NNNJÿÿÿÿJÿÿÿÿK t”bahI‡”R”Œnumba.core.typing.templates”Œ	Signature”“”)”(h<(h<hBhBhBhBt”NNt”b‰)X|  # File: C:\Users\elmer\Downloads\halftone_rip_pro_v2(18)\halftone_rip_pro_v2\app.py
+# --- LINE 302 --- 
+# label 0
+#   channel_array = arg(0, name=channel_array)  :: array(uint8, 2d, C)
+#   channel_array_shape.0 = getattr(value=channel_array, attr=shape)  :: UniTuple(int64 x 2)
+#   channel_array_size0.1 = static_getitem(value=channel_array_shape.0, index=0, index_var=None, fn=<built-in function getitem>)  :: int64
+#   channel_array_size1.2 = static_getitem(value=channel_array_shape.0, index=1, index_var=None, fn=<built-in function getitem>)  :: int64
+#   del channel_array_shape.0
+#   lpi = arg(1, name=lpi)  :: int64
+#   dpi = arg(2, name=dpi)  :: int64
+#   angle_deg = arg(3, name=angle_deg)  :: int64
+#   shape_type = arg(4, name=shape_type)  :: int64
+
+@jit(nopython=True, parallel=True, cache=True)
+
+# --- LINE 303 --- 
+
+def apply_halftone_fast(channel_array, lpi, dpi, angle_deg, shape_type):
+
+    # --- LINE 304 --- 
+
+    """Semitono optimizado con Numba - 10x mÃ¡s rÃ¡pido"""
+
+    # --- LINE 305 --- 
+    #   $6load_attr.1 = getattr(value=channel_array, attr=shape)  :: UniTuple(int64 x 2)
+    #   $26unpack_sequence.4 = exhaust_iter(value=$6load_attr.1, count=2)  :: UniTuple(int64 x 2)
+    #   del $6load_attr.1
+    #   $h.37 = static_getitem(value=$26unpack_sequence.4, index=0, index_var=None, fn=<built-in function getitem>)  :: int64
+    #   $w.36 = static_getitem(value=$26unpack_sequence.4, index=1, index_var=None, fn=<built-in function getitem>)  :: int64
+    #   del $26unpack_sequence.4
+
+    h, w = channel_array.shape
+
+    # --- LINE 306 --- 
+    #   $32load_global.5 = global(np: <module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)  :: Module(<module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)
+    #   $42load_attr.6 = getattr(value=$32load_global.5, attr=deg2rad)  :: Function(<ufunc 'deg2rad'>)
+    #   del $32load_global.5
+    #   theta = call $42load_attr.6(angle_deg, func=$42load_attr.6, args=[Var(angle_deg, app.py:302)], kws=(), vararg=None, varkwarg=None, target=None)  :: (int64,) -> float64
+    #   del angle_deg
+    #   del $42load_attr.6
+
+    theta = np.deg2rad(angle_deg)
+
+    # --- LINE 307 --- 
+    #   T = dpi / lpi  :: float64
+    #   del lpi
+    #   del dpi
+
+    T = dpi / lpi
+
+# --- LINE 308 --- 
+
+
+
+    # --- LINE 309 --- 
+    #   id=0[LoopNest(index_variable = parfor_index.20, range = (0, channel_array_size0.1, 1)), LoopNest(index_variable = parfor_index.21, range = (0, channel_array_size1.2, 1))]{1773: <ir.Block at C:\Users\elmer\Downloads\halftone_rip_pro_v2(18)\halftone_rip_pro_v2\app.py (309)>}Var($parfor_index_tuple_var.27, app.py:309)
+
+    result = np.zeros((h, w), dtype=np.uint8)
+
+    # --- LINE 310 --- 
+    #   $170load_global.23 = global(np: <module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)  :: Module(<module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)
+    #   $180load_attr.24 = getattr(value=$170load_global.23, attr=cos)  :: Function(<ufunc 'cos'>)
+    #   del $170load_global.23
+    #   cos_t = call $180load_attr.24(theta, func=$180load_attr.24, args=[Var(theta, app.py:306)], kws=(), vararg=None, varkwarg=None, target=None)  :: (float64,) -> float64
+    #   del $180load_attr.24
+
+    cos_t = np.cos(theta)
+
+    # --- LINE 311 --- 
+    #   $214load_global.28 = global(np: <module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)  :: Module(<module 'numpy' from 'C:\\Users\\elmer\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py'>)
+    #   $224load_attr.29 = getattr(value=$214load_global.28, attr=sin)  :: Function(<ufunc 'sin'>)
+    #   del $214load_global.28
+    #   sin_t = call $224load_attr.29(theta, func=$224load_attr.29, args=[Var(theta, app.py:306)], kws=(), vararg=None, varkwarg=None, target=None)  :: (float64,) -> float64
+    #   del theta
+    #   del $224load_attr.29
+
+    sin_t = np.sin(theta)
+
+# --- LINE 312 --- 
+
+
+
+    # --- LINE 313 --- 
+    #   id=2[LoopNest(index_variable = parfor_index.30, range = (0, $h.37, 1))]{286: <ir.Block at C:\Users\elmer\Downloads\halftone_rip_pro_v2(18)\halftone_rip_pro_v2\app.py (313)>}Var(parfor_index.30, app.py:313)
+    #   del v_norm
+    #   del u_norm
+    #   del threshold.5
+    #   del sin_t
+    #   del shape_type
+    #   del parfor_index.28
+    #   del cos_t
+    #   del channel_array
+    #   del T
+    #   del $w.36
+    #   del $phi1746.2.2
+
+    for y in prange(h):
+
+        # --- LINE 314 --- 
+
+        for x in prange(w):
+
+            # --- LINE 315 --- 
+
+            u = x * cos_t - y * sin_t
+
+            # --- LINE 316 --- 
+
+            v = x * sin_t + y * cos_t
+
+# --- LINE 317 --- 
+
+
+
+            # --- LINE 318 --- 
+
+            u_norm = ((u / T) - np.round(u / T)) * 2.0
+
+            # --- LINE 319 --- 
+
+            v_norm = ((v / T) - np.round(v / T)) * 2.0
+
+# --- LINE 320 --- 
+
+
+
+            # --- LINE 321 --- 
+
+            if shape_type == 0:  # round
+
+                # --- LINE 322 --- 
+
+                S = np.cos(np.pi * u_norm) + np.cos(np.pi * v_norm)
+
+                # --- LINE 323 --- 
+
+                threshold = (S + 2.0) / 4.0
+
+            # --- LINE 324 --- 
+
+            elif shape_type == 1:  # ellipse
+
+                # --- LINE 325 --- 
+
+                S = 3.0 * np.cos(np.pi * u_norm) + np.cos(np.pi * v_norm)
+
+                # --- LINE 326 --- 
+
+                threshold = (S + 4.0) / 8.0
+
+            # --- LINE 327 --- 
+
+            elif shape_type == 2:  # line
+
+                # --- LINE 328 --- 
+
+                S = np.cos(np.pi * v_norm)
+
+                # --- LINE 329 --- 
+
+                threshold = (S + 1.0) / 2.0
+
+            # --- LINE 330 --- 
+
+            elif shape_type == 3:  # square
+
+                # --- LINE 331 --- 
+
+                S = np.cos(np.pi * u_norm) * np.cos(np.pi * v_norm)
+
+                # --- LINE 332 --- 
+
+                threshold = (S + 1.0) / 2.0
+
+            # --- LINE 333 --- 
+
+            else:  # diamond
+
+                # --- LINE 334 --- 
+
+                S = np.cos(np.pi * u_norm) + np.cos(np.pi * (u_norm + v_norm)/2.0)
+
+                # --- LINE 335 --- 
+
+                threshold = (S + 2.0) / 4.0
+
+# --- LINE 336 --- 
+
+
+
+            # --- LINE 337 --- 
+
+            ink_density = (255.0 - channel_array[y, x]) / 255.0
+
+            # --- LINE 338 --- 
+
+            result[y, x] = 0 if ink_density > threshold else 255
+
+# --- LINE 339 --- 
+
+
+
+    # --- LINE 340 --- 
+    #   $1778return_value.3 = cast(value=result)  :: array(uint8, 2d, C)
+    #   del result
+    #   return $1778return_value.3
+
+    return result
+
+”]”(Œnumba.core.typed_passes”Œ_reload_parfors”“”hje(h_hTŒnumba.np.arrayobj”]”Œ”_ZN08NumbaEnv5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB3v10B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dE8UniTupleIxLi2EE16class_28uint8_29”‡”R”hThk]”Œ©_ZN08NumbaEnv5numba2np8arrayobj15_call_allocatorB2v4B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj”‡”R”hThk]”Œ¿_ZN08NumbaEnv5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v5B42c8tJTIeFIjxB2IKSgI4CrvQClcaMQ5hEEUSJJgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dExj”‡”R”hTŒnumba.np.arraymath”]”Œ¹_ZN08NumbaEnv5numba2np9arraymath13impl_np_round12_3clocals_3e4implB3v13B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEd24omitted_28default_3d0_2927omitted_28default_3dNone_29”‡”R”hThx]”Œp_ZN08NumbaEnv5numba2np9arraymath13round_ndigitsB3v14B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dEdx”‡”R”hTŒnumba.cpython.numbers”]”Œ€_ZN08NumbaEnv5numba7cpython7numbers14int_power_impl12_3clocals_3e9int_powerB3v15B42c8tJTC_2fWQA93W1AaAIYBPIqRBFCjDSZRVAJmaQIAEdx”‡”R”t”t”.
