@@ -993,67 +993,292 @@ def create_composite_preview(channels):
 # ANÁLISIS DE DIFERENCIAS
 # =============================================================================
 
-def analyze_differences(sep_img, ref_img):
-    w, h = min(sep_img.size[0], ref_img.size[0]), min(sep_img.size[1], ref_img.size[1])
-    sep_img = sep_img.resize((w, h), Image.LANCZOS).convert('RGB')
-    ref_img = ref_img.resize((w, h), Image.LANCZOS).convert('RGB')
+def image_to_grayscale_array(image):
+    """Convierte cualquier imagen PIL a un array 2D uint8 en escala de grises."""
+    return np.array(image.convert('L'), dtype=np.uint8)
 
-    sep_arr = np.array(sep_img).astype(np.float32)
-    ref_arr = np.array(ref_img).astype(np.float32)
 
-    diff = np.abs(sep_arr - ref_arr)
-    diff_mean = np.mean(diff, axis=2)
+def ink_mask_from_image(image, threshold=245):
+    """
+    Devuelve una máscara booleana donde True significa contenido/tinta.
 
-    total_pixels = w * h
-    avg_diff = np.mean(diff_mean)
-    bright_px = np.sum(np.sum(sep_arr, axis=2) > 600)
-    dark_px = np.sum(np.sum(sep_arr, axis=2) < 150)
+    El umbral alto reduce falsos negativos en bordes suavizados: cualquier
+    píxel claramente distinto del papel blanco se considera parte del diseño.
+    """
+    gray = image_to_grayscale_array(image)
+    return gray < int(np.clip(threshold, 1, 255))
 
-    sep_norm = sep_arr / 255.0
-    mx = np.max(sep_norm, axis=2)
-    mn = np.min(sep_norm, axis=2)
-    sat_mask = (mx > 0) & ((mx - mn) / mx > 0.4)
-    sat_px = np.sum(sat_mask)
 
-    bright_pct = int(bright_px / total_pixels * 100)
-    dark_pct = int(dark_px / total_pixels * 100)
-    sat_pct = int(sat_px / total_pixels * 100)
-    diff_score = int(avg_diff)
+def clean_binary_mask(mask, min_component_area=8, morph_radius=1):
+    """
+    Elimina ruido pequeño y suaviza discontinuidades mínimas sin destruir
+    detalles finos. Si scipy no está disponible, conserva la máscara original.
+    """
+    mask = np.asarray(mask, dtype=bool)
+    try:
+        from scipy import ndimage
 
-    diff_map = np.zeros((h, w, 4), dtype=np.uint8)
-    intensity = np.clip(diff_mean * 3, 0, 255).astype(np.uint8)
-    high_diff = diff_mean > 30
-    diff_map[high_diff] = [220, 60, 60, np.clip(intensity[high_diff] * 2, 0, 255)]
-    diff_map[~high_diff] = [0, 200, 0, 0]
+        if morph_radius > 0:
+            structure = np.ones((morph_radius * 2 + 1, morph_radius * 2 + 1), dtype=bool)
+            mask = ndimage.binary_opening(mask, structure=structure)
+            mask = ndimage.binary_closing(mask, structure=structure)
 
-    findings = []
-    if avg_diff < 8:
-        findings.append({'title': 'Densidad general', 'status': 'ok', 'pct': 95, 'msg': 'Cobertura de tinta muy cercana a la referencia. Excelente registro.'})
-    elif avg_diff < 20:
-        findings.append({'title': 'Densidad general', 'status': 'warn', 'pct': 70, 'msg': 'Diferencia promedio de ' + str(diff_score) + '/255 por pixel. Revisa la ganancia de punto.'})
-    else:
-        findings.append({'title': 'Densidad general', 'status': 'err', 'pct': 30, 'msg': 'Diferencia alta (' + str(diff_score) + '/255). Posible error en curvas de tinta o mala separacion.'})
+        labeled, count = ndimage.label(mask)
+        if count == 0:
+            return mask.astype(bool)
 
-    if bright_pct > 40:
-        findings.append({'title': 'Zonas claras', 'status': 'warn', 'pct': bright_pct, 'msg': str(bright_pct) + '% del area es muy clara. Verifica que no haya perdida de semitonos.'})
-    else:
-        findings.append({'title': 'Zonas claras', 'status': 'ok', 'pct': 100 - bright_pct, 'msg': 'Balance de altas luces correcto (' + str(bright_pct) + '% area clara).'})
+        sizes = np.bincount(labeled.ravel())
+        keep = sizes >= max(1, int(min_component_area))
+        keep[0] = False
+        return keep[labeled].astype(bool)
+    except ImportError:
+        return mask.astype(bool)
 
-    if dark_pct > 35:
-        findings.append({'title': 'Zonas oscuras', 'status': 'warn', 'pct': dark_pct, 'msg': str(dark_pct) + '% del area tiene sombras muy densas. Riesgo de empastamiento.'})
-    else:
-        findings.append({'title': 'Zonas oscuras', 'status': 'ok', 'pct': 100 - dark_pct, 'msg': 'Sombras dentro del rango aceptable.'})
 
-    if sat_pct > 60:
-        findings.append({'title': 'Saturacion', 'status': 'warn', 'pct': sat_pct, 'msg': str(sat_pct) + '% del area tiene colores muy saturados. Verifica gamut.'})
-    else:
-        findings.append({'title': 'Saturacion', 'status': 'ok', 'pct': 100 - sat_pct, 'msg': 'Saturacion dentro del gamut estandar.'})
+def compute_binary_metrics(ref_mask, sep_mask):
+    """Calcula métricas estructurales sobre dos máscaras binarias alineadas."""
+    ref_mask = np.asarray(ref_mask, dtype=bool)
+    sep_mask = np.asarray(sep_mask, dtype=bool)
+
+    if ref_mask.shape != sep_mask.shape:
+        raise ValueError("Las máscaras estructurales deben tener exactamente el mismo tamaño")
+
+    tp_mask = ref_mask & sep_mask
+    fp_mask = ~ref_mask & sep_mask
+    fn_mask = ref_mask & ~sep_mask
+
+    tp = int(tp_mask.sum())
+    fp = int(fp_mask.sum())
+    fn = int(fn_mask.sum())
+    ref_pixels = int(ref_mask.sum())
+    sep_pixels = int(sep_mask.sum())
+    union = tp + fp + fn
+
+    iou = tp / union if union else 1.0
+    dice = (2 * tp) / (2 * tp + fp + fn) if (2 * tp + fp + fn) else 1.0
+    precision = tp / (tp + fp) if (tp + fp) else (1.0 if ref_pixels == 0 else 0.0)
+    recall = tp / (tp + fn) if (tp + fn) else 1.0
+    missing_pct = (fn / ref_pixels * 100.0) if ref_pixels else 0.0
+    extra_pct = (fp / ref_pixels * 100.0) if ref_pixels else (100.0 if sep_pixels else 0.0)
 
     return {
-        'score': diff_score,
-        'diff_map': Image.fromarray(diff_map, mode='RGBA'),
+        'true_positive_pixels': tp,
+        'false_positive_pixels': fp,
+        'false_negative_pixels': fn,
+        'reference_pixels': ref_pixels,
+        'separation_pixels': sep_pixels,
+        'iou': round(iou, 4),
+        'dice': round(dice, 4),
+        'precision': round(precision, 4),
+        'recall': round(recall, 4),
+        'missing_pct': round(missing_pct, 2),
+        'extra_pct': round(extra_pct, 2),
+    }
+
+
+def connected_components_summary(mask, min_area=8):
+    """Resume los componentes conectados para ubicar objetos perdidos o nuevos."""
+    mask = np.asarray(mask, dtype=bool)
+    try:
+        from scipy import ndimage
+
+        labeled, count = ndimage.label(mask)
+        components = []
+        for label in range(1, count + 1):
+            ys, xs = np.where(labeled == label)
+            area = int(len(xs))
+            if area < min_area:
+                continue
+            components.append({
+                'label': label,
+                'area': area,
+                'bbox': (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1),
+                'centroid': (float(xs.mean()), float(ys.mean())),
+            })
+        return components
+    except ImportError:
+        ys, xs = np.where(mask)
+        if len(xs) < min_area:
+            return []
+        return [{
+            'label': 1,
+            'area': int(len(xs)),
+            'bbox': (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1),
+            'centroid': (float(xs.mean()), float(ys.mean())),
+        }]
+
+
+def describe_region(bbox, image_size):
+    """Convierte una caja en una descripción humana de ubicación."""
+    x0, y0, x1, y1 = bbox
+    w, h = image_size
+    cx = (x0 + x1) / 2.0
+    cy = (y0 + y1) / 2.0
+
+    horizontal = 'izquierda' if cx < w / 3 else 'derecha' if cx > 2 * w / 3 else 'centro'
+    vertical = 'superior' if cy < h / 3 else 'inferior' if cy > 2 * h / 3 else 'central'
+
+    if horizontal == 'centro' and vertical == 'central':
+        return 'zona central'
+    if horizontal == 'centro':
+        return f'zona {vertical}'
+    if vertical == 'central':
+        return f'lateral {horizontal}'
+    return f'esquina {vertical} {horizontal}'
+
+
+def build_structural_diff_map(ref_mask, sep_mask):
+    """Crea un mapa RGBA: verde=match, rojo=falta, azul=sobra."""
+    ref_mask = np.asarray(ref_mask, dtype=bool)
+    sep_mask = np.asarray(sep_mask, dtype=bool)
+    h, w = ref_mask.shape
+
+    diff_map = np.zeros((h, w, 4), dtype=np.uint8)
+    match = ref_mask & sep_mask
+    missing = ref_mask & ~sep_mask
+    extra = ~ref_mask & sep_mask
+
+    diff_map[match] = [0, 200, 100, 120]
+    diff_map[missing] = [220, 60, 60, 220]
+    diff_map[extra] = [40, 120, 255, 220]
+
+    return Image.fromarray(diff_map, mode='RGBA')
+
+
+def _components_from_error_mask(error_mask, min_area):
+    return connected_components_summary(error_mask, min_area=min_area)
+
+
+def build_structural_findings(metrics, missing_components, extra_components, image_size):
+    """Genera conclusiones útiles priorizando pérdidas visuales sobre cobertura."""
+    findings = []
+    score = structural_score_from_metrics(metrics, len(missing_components), len(extra_components))
+
+    if score <= 5:
+        findings.append({
+            'title': 'Geometría del diseño',
+            'status': 'ok',
+            'pct': 100,
+            'msg': 'No se detectaron pérdidas de información. La geometría coincide con la referencia.'
+        })
+    elif score <= 20:
+        findings.append({
+            'title': 'Geometría del diseño',
+            'status': 'warn',
+            'pct': max(0, 100 - score),
+            'msg': f'La geometría es similar, pero hay {metrics["missing_pct"]:.2f}% faltante y {metrics["extra_pct"]:.2f}% adicional.'
+        })
+    else:
+        findings.append({
+            'title': 'Geometría del diseño',
+            'status': 'err',
+            'pct': max(0, 100 - score),
+            'msg': f'Se detectaron cambios estructurales importantes: IoU {metrics["iou"]:.3f}, recall {metrics["recall"]:.3f}.'
+        })
+
+    for comp in sorted(missing_components, key=lambda c: c['area'], reverse=True)[:3]:
+        findings.append({
+            'title': 'Información faltante',
+            'status': 'err',
+            'pct': min(100, max(5, int(comp['area'] ** 0.5))),
+            'msg': f'Se perdió un objeto o fragmento de {comp["area"]} px en la {describe_region(comp["bbox"], image_size)}.'
+        })
+
+    for comp in sorted(extra_components, key=lambda c: c['area'], reverse=True)[:3]:
+        findings.append({
+            'title': 'Información adicional',
+            'status': 'warn',
+            'pct': min(100, max(5, int(comp['area'] ** 0.5))),
+            'msg': f'Se detectó un objeto adicional de {comp["area"]} px en la {describe_region(comp["bbox"], image_size)}.'
+        })
+
+    if not missing_components and not extra_components and score > 5:
+        findings.append({
+            'title': 'Contorno modificado',
+            'status': 'warn',
+            'pct': max(0, 100 - score),
+            'msg': 'Las diferencias se concentran en bordes o detalles finos; revisa posible antialiasing, trama o desplazamiento leve.'
+        })
+
+    return findings
+
+
+def structural_score_from_metrics(metrics, missing_component_count=0, extra_component_count=0):
+    """Convierte métricas binarias en un riesgo estructural 0-100."""
+    missing_penalty = min(70.0, metrics['missing_pct'] * 2.8)
+    extra_penalty = min(25.0, metrics['extra_pct'] * 1.2)
+    iou_penalty = max(0.0, (1.0 - metrics['iou']) * 60.0)
+    component_penalty = min(15.0, missing_component_count * 4.0 + extra_component_count * 2.0)
+    return int(np.clip(missing_penalty + extra_penalty + iou_penalty + component_penalty, 0, 100))
+
+
+def compare_structural_images(ref_img, sep_img, threshold=245, min_component_area=8, morph_radius=1):
+    """
+    Comparador estructural principal: trabaja con máscaras binarias limpias y
+    devuelve métricas de geometría, mapa semántico y hallazgos de preprensa.
+    """
+    if ref_img.size != sep_img.size:
+        raise ValueError(
+            f"Las imágenes deben tener el mismo tamaño antes de comparar: referencia {ref_img.size}, separación {sep_img.size}"
+        )
+
+    ref_mask = clean_binary_mask(
+        ink_mask_from_image(ref_img, threshold=threshold),
+        min_component_area=min_component_area,
+        morph_radius=morph_radius
+    )
+    sep_mask = clean_binary_mask(
+        ink_mask_from_image(sep_img, threshold=threshold),
+        min_component_area=min_component_area,
+        morph_radius=morph_radius
+    )
+
+    metrics = compute_binary_metrics(ref_mask, sep_mask)
+    missing_mask = ref_mask & ~sep_mask
+    extra_mask = ~ref_mask & sep_mask
+    missing_components = _components_from_error_mask(missing_mask, min_component_area)
+    extra_components = _components_from_error_mask(extra_mask, min_component_area)
+
+    metrics.update({
+        'lost_components': len(missing_components),
+        'new_components': len(extra_components),
+        'component_count_ref': len(connected_components_summary(ref_mask, min_component_area)),
+        'component_count_sep': len(connected_components_summary(sep_mask, min_component_area)),
+    })
+
+    score = structural_score_from_metrics(metrics, len(missing_components), len(extra_components))
+    findings = build_structural_findings(metrics, missing_components, extra_components, ref_img.size)
+
+    return {
+        'score': score,
+        'diff_map': build_structural_diff_map(ref_mask, sep_mask),
         'findings': findings,
-        'metrics': {'avg_diff': diff_score, 'bright_pct': bright_pct, 'dark_pct': dark_pct, 'sat_pct': sat_pct}
+        'metrics': metrics,
+        'masks': {
+            'reference': ref_mask,
+            'separation': sep_mask,
+            'missing': missing_mask,
+            'extra': extra_mask,
+        }
+    }
+
+
+def analyze_differences(sep_img, ref_img):
+    """
+    Compatibilidad para /api/analyze: conserva la forma de respuesta anterior,
+    pero reemplaza la comparación RGB/promedio por comparación estructural.
+    """
+    if sep_img.size != ref_img.size:
+        w, h = min(sep_img.size[0], ref_img.size[0]), min(sep_img.size[1], ref_img.size[1])
+        sep_img = sep_img.resize((w, h), Image.LANCZOS)
+        ref_img = ref_img.resize((w, h), Image.LANCZOS)
+
+    result = compare_structural_images(ref_img, sep_img)
+    return {
+        'score': result['score'],
+        'diff_map': result['diff_map'],
+        'findings': result['findings'],
+        'metrics': result['metrics']
     }
 
 
@@ -2144,54 +2369,23 @@ def analyze_detailed():
         # score global - ver nota arriba sobre por qué no es una suma simple.
         total_coverage = 1.0 - light_through
 
-        # Análisis global
+        # Análisis global de cobertura (secundario): se conserva como métrica
+        # informativa, pero el score principal ahora lo decide el análisis
+        # estructural binario.
         total_coverage_pct = int(np.mean(total_coverage) * 100)
 
-        # Crear mapa de diferencias
-        ref_gray = np.mean(ref_arr, axis=2)
-        ref_ink = (255 - ref_gray) / 255.0
+        # Módulo 1: comparación estructural. La separación combinada se expresa
+        # como imagen L con 0=tinta y 255=papel para reutilizar el mismo
+        # preprocesamiento binario que una placa individual.
+        combined_sep_arr = np.clip(255.0 - total_coverage * 255.0, 0, 255).astype(np.uint8)
+        combined_sep_img = Image.fromarray(combined_sep_arr, mode='L')
+        structural = compare_structural_images(aligned_ref, combined_sep_img)
+        score = structural['score']
+        diff_img = structural['diff_map']
 
-        diff_map = np.zeros((h, w, 4), dtype=np.uint8)
-
-        # Diferencia absoluta
-        diff = np.abs(total_coverage - ref_ink)
-
-        # Pintar: verde = coincidencia, rojo = diferencia
-        high_diff = diff > 0.3
-        med_diff = (diff > 0.15) & ~high_diff
-
-        diff_map[high_diff] = [220, 60, 60, 200]  # Rojo: diferencia alta
-        diff_map[med_diff] = [245, 200, 0, 150]   # Amarillo: diferencia media
-        diff_map[~(high_diff | med_diff)] = [0, 200, 100, 80]  # Verde: coincidencia
-
-        diff_img = Image.fromarray(diff_map, mode='RGBA')
-
-        # Score general
-        avg_diff = np.mean(diff) * 100
-        score = int(avg_diff)
-
-        # Agregar hallazgo global
-        if score < 15:
-            findings.insert(0, {
-                'title': 'Coincidencia general',
-                'status': 'ok',
-                'pct': 100 - score,
-                'msg': f'Excelente coincidencia con referencia. Diferencia promedio: {score}%'
-            })
-        elif score < 30:
-            findings.insert(0, {
-                'title': 'Coincidencia general',
-                'status': 'warn',
-                'pct': 100 - score,
-                'msg': f'Diferencia moderada ({score}%). Revisa separaciones individuales.'
-            })
-        else:
-            findings.insert(0, {
-                'title': 'Coincidencia general',
-                'status': 'err',
-                'pct': max(0, 100 - score),
-                'msg': f'Alta diferencia ({score}%). Posible error en separación o referencia incorrecta.'
-            })
+        # Los hallazgos estructurales van primero; las advertencias de cobertura
+        # por placa quedan como información secundaria.
+        findings = structural['findings'] + findings
 
         return jsonify({
             'success': True,
@@ -2199,7 +2393,8 @@ def analyze_detailed():
             'diff_map': pil_to_base64(diff_img),
             'findings': findings,
             'metrics': {
-                'avg_diff': score,
+                **structural['metrics'],
+                'structural_score': score,
                 'total_coverage': total_coverage_pct,
                 'separation_count': len(png_files)
             }
