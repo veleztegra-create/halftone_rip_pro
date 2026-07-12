@@ -408,6 +408,45 @@ def pil_to_base64(img, fmt='PNG'):
     img_str = base64.b64encode(buffer.getvalue()).decode()
     return f'data:image/{fmt.lower()};base64,{img_str}'
 
+
+def assert_analysis_dimensions(label, image_or_array, expected_size):
+    """
+    Falla temprano si una imagen usada para análisis cambia de tamaño durante
+    el flujo. expected_size siempre se expresa como (width, height), incluso
+    cuando se valida un array NumPy cuya forma llega como (height, width).
+    """
+    if hasattr(image_or_array, 'size') and not isinstance(image_or_array, np.ndarray):
+        current_size = image_or_array.size
+    else:
+        arr = np.asarray(image_or_array)
+        if arr.ndim < 2:
+            raise ValueError(f"{label} no es una imagen/array 2D válido para análisis")
+        current_size = (arr.shape[1], arr.shape[0])
+
+    if tuple(current_size) != tuple(expected_size):
+        raise ValueError(
+            f"{label} cambió de tamaño durante el análisis: esperado {expected_size}, actual {current_size}"
+        )
+
+
+def image_copy_for_analysis(image, mode=None):
+    """
+    Devuelve una copia independiente para análisis. Nunca se trabaja sobre la
+    instancia PIL recibida desde UI/preview para evitar que resize/paste/etc.
+    contaminen la imagen original.
+    """
+    copied = image.copy()
+    return copied.convert(mode) if mode else copied
+
+
+def resize_copy_for_analysis(image, size, resample=Image.LANCZOS):
+    """Redimensiona una copia y verifica que la imagen fuente no cambió."""
+    original_size = image.size
+    resized = image.copy().resize(size, resample)
+    assert_analysis_dimensions('Imagen fuente de análisis', image, original_size)
+    assert_analysis_dimensions('Imagen redimensionada para análisis', resized, size)
+    return resized
+
 def smart_thumbnail(img, target_max=800):
     """
     Reduce una imagen de halftone para vista previa sin el aliasing severo
@@ -1217,21 +1256,34 @@ def compare_structural_images(ref_img, sep_img, threshold=245, min_component_are
     Comparador estructural principal: trabaja con máscaras binarias limpias y
     devuelve métricas de geometría, mapa semántico y hallazgos de preprensa.
     """
-    if ref_img.size != sep_img.size:
+    ref_original_size = ref_img.size
+    sep_original_size = sep_img.size
+
+    if ref_original_size != sep_original_size:
         raise ValueError(
             f"Las imágenes deben tener el mismo tamaño antes de comparar: referencia {ref_img.size}, separación {sep_img.size}"
         )
 
+    # Las máscaras se calculan a partir de copias independientes. El mapa de
+    # diferencias se genera después, también desde arrays nuevos, y nunca se
+    # reinyecta en el análisis.
+    ref_analysis_img = image_copy_for_analysis(ref_img)
+    sep_analysis_img = image_copy_for_analysis(sep_img)
+    assert_analysis_dimensions('Referencia estructural inicial', ref_analysis_img, ref_original_size)
+    assert_analysis_dimensions('Separación estructural inicial', sep_analysis_img, sep_original_size)
+
     ref_mask = clean_binary_mask(
-        ink_mask_from_image(ref_img, threshold=threshold),
+        ink_mask_from_image(ref_analysis_img, threshold=threshold),
         min_component_area=min_component_area,
         morph_radius=morph_radius
     )
     sep_mask = clean_binary_mask(
-        ink_mask_from_image(sep_img, threshold=threshold),
+        ink_mask_from_image(sep_analysis_img, threshold=threshold),
         min_component_area=min_component_area,
         morph_radius=morph_radius
     )
+    assert_analysis_dimensions('Máscara de referencia estructural', ref_mask, ref_original_size)
+    assert_analysis_dimensions('Máscara de separación estructural', sep_mask, sep_original_size)
 
     metrics = compute_binary_metrics(ref_mask, sep_mask)
     missing_mask = ref_mask & ~sep_mask
@@ -1247,11 +1299,17 @@ def compare_structural_images(ref_img, sep_img, threshold=245, min_component_are
     })
 
     score = structural_score_from_metrics(metrics, len(missing_components), len(extra_components))
-    findings = build_structural_findings(metrics, missing_components, extra_components, ref_img.size)
+    findings = build_structural_findings(metrics, missing_components, extra_components, ref_original_size)
+    diff_map = build_structural_diff_map(ref_mask, sep_mask)
+    assert_analysis_dimensions('Mapa de diferencias estructural', diff_map, ref_original_size)
+
+    # Verificación final: ninguna imagen de entrada fue alterada por el flujo.
+    assert_analysis_dimensions('Referencia estructural original', ref_img, ref_original_size)
+    assert_analysis_dimensions('Separación estructural original', sep_img, sep_original_size)
 
     return {
         'score': score,
-        'diff_map': build_structural_diff_map(ref_mask, sep_mask),
+        'diff_map': diff_map,
         'findings': findings,
         'metrics': metrics,
         'masks': {
@@ -1268,10 +1326,13 @@ def analyze_differences(sep_img, ref_img):
     Compatibilidad para /api/analyze: conserva la forma de respuesta anterior,
     pero reemplaza la comparación RGB/promedio por comparación estructural.
     """
+    sep_img = image_copy_for_analysis(sep_img)
+    ref_img = image_copy_for_analysis(ref_img)
+
     if sep_img.size != ref_img.size:
         w, h = min(sep_img.size[0], ref_img.size[0]), min(sep_img.size[1], ref_img.size[1])
-        sep_img = sep_img.resize((w, h), Image.LANCZOS)
-        ref_img = ref_img.resize((w, h), Image.LANCZOS)
+        sep_img = resize_copy_for_analysis(sep_img, (w, h))
+        ref_img = resize_copy_for_analysis(ref_img, (w, h))
 
     result = compare_structural_images(ref_img, sep_img)
     return {
@@ -1673,10 +1734,25 @@ def load_job_manifest(output_dir):
         except Exception as e:
             print(f"[WARN] manifest.json inválido, usando fallback: {e}")
 
-    # Fallback: comportamiento anterior (orden alfabético inferido)
+    # Fallback: comportamiento anterior (orden alfabético inferido), pero
+    # filtrando explícitamente PNGs de visualización/diagnóstico. Esos archivos
+    # pueden ser miniaturas o mapas y nunca deben entrar al análisis estructural
+    # como si fueran placas reales.
+    diagnostic_names = {
+        'composite_visual.png',
+        'diff_map.png',
+        'difference_map.png',
+        'analysis_diff.png',
+        'structural_diff.png',
+    }
+    diagnostic_prefixes = ('preview_', 'thumb_', 'thumbnail_', 'diff_', 'difference_', 'diagnostic_')
     png_files = sorted([
         f for f in os.listdir(output_dir)
-        if f.endswith('.png') and f not in ('separaciones.zip', 'separaciones.pdf', 'composite_visual.png')
+        if (
+            f.lower().endswith('.png')
+            and f.lower() not in diagnostic_names
+            and not f.lower().startswith(diagnostic_prefixes)
+        )
     ])
     return [
         {'name': f.replace('.png', '').replace('_', ' ').title(), 'filename': f}
@@ -2267,17 +2343,18 @@ def analyze_detailed():
         return jsonify({'error': 'Trabajo no encontrado'}), 404
 
     try:
-        # Cargar imagen de referencia
+        # Cargar imagen de referencia en una copia independiente para análisis.
         ref_bytes = base64.b64decode(ref_data.split(',')[1])
-        ref_img = Image.open(io.BytesIO(ref_bytes)).convert('RGB')
+        with Image.open(io.BytesIO(ref_bytes)) as uploaded_ref:
+            ref_img = image_copy_for_analysis(uploaded_ref, mode='RGB')
+        ref_source_size = ref_img.size
 
-        # Buscar separaciones
-        png_files = sorted([
-            f for f in os.listdir(output_dir)
-            if f.endswith('.png') and f != 'separaciones.zip' and f != 'separaciones.pdf' and f != 'composite_visual.png'
-        ])
+        # Buscar separaciones reales desde el manifiesto. Esto evita que PNGs
+        # de preview/diagnóstico (incluido cualquier mapa de diferencias) se
+        # reutilicen accidentalmente como entrada del análisis estructural.
+        manifest = load_job_manifest(output_dir)
 
-        if not png_files:
+        if not manifest:
             return jsonify({'error': 'No hay separaciones'}), 404
 
         align_scale = max(0.05, float(data.get('align_scale', 1.0)))
@@ -2285,21 +2362,28 @@ def analyze_detailed():
         align_y     = int(float(data.get('align_y', 0)))
 
         # Redimensionar y alinear referencia al tamaño de las separaciones
-        sample_img = Image.open(os.path.join(output_dir, png_files[0])).convert('L')
+        with Image.open(os.path.join(output_dir, manifest[0]['filename'])) as sample_src:
+            sample_img = image_copy_for_analysis(sample_src, mode='L')
         w, h = sample_img.size
+        analysis_size = (w, h)
+        assert_analysis_dimensions('Separación muestra para análisis', sample_img, analysis_size)
 
         # Escalar la referencia según el factor del usuario
         scaled_w = max(1, int(ref_img.width  * align_scale))
         scaled_h = max(1, int(ref_img.height * align_scale))
-        ref_scaled = ref_img.resize((scaled_w, scaled_h), Image.LANCZOS)
+        ref_scaled = resize_copy_for_analysis(ref_img, (scaled_w, scaled_h))
+        assert_analysis_dimensions('Referencia original cargada', ref_img, ref_source_size)
 
         # Pegar en un lienzo blanco del mismo tamaño que las separaciones,
         # con el offset X/Y indicado (la zona que quede fuera del lienzo se recorta)
-        aligned_ref = Image.new('RGB', (w, h), (255, 255, 255))
+        aligned_ref = Image.new('RGB', analysis_size, (255, 255, 255))
         paste_box = (align_x, align_y)
-        # Validar que al menos parte de la imagen quede dentro del lienzo
+        # paste() solo opera sobre este lienzo nuevo; nunca sobre la imagen de
+        # referencia original ni sobre una imagen de preview.
         aligned_ref.paste(ref_scaled, paste_box)
+        assert_analysis_dimensions('Referencia alineada para análisis', aligned_ref, analysis_size)
         ref_arr = np.array(aligned_ref).astype(np.float32)
+        assert_analysis_dimensions('Array de referencia alineada', ref_arr, analysis_size)
 
         # Analizar cada separación
         findings = []
@@ -2315,15 +2399,23 @@ def analyze_detailed():
         # la "luz no absorbida" de cada placa, no sumando la tinta.
         light_through = np.ones((h, w), dtype=np.float32)
 
-        for idx, png_file in enumerate(png_files):
-            sep_img = Image.open(os.path.join(output_dir, png_file)).convert('L').resize((w, h), Image.LANCZOS)
+        for idx, entry in enumerate(manifest):
+            png_file = entry['filename']
+            sep_path = os.path.join(output_dir, png_file)
+            with Image.open(sep_path) as sep_src:
+                sep_img = image_copy_for_analysis(sep_src, mode='L')
+            if sep_img.size != analysis_size:
+                sep_img = resize_copy_for_analysis(sep_img, analysis_size)
+            assert_analysis_dimensions(f"Separación '{png_file}' para análisis", sep_img, analysis_size)
             sep_arr = np.array(sep_img).astype(np.float32)
+            assert_analysis_dimensions(f"Array de separación '{png_file}'", sep_arr, analysis_size)
 
             # Invertir: en separación, 0 = tinta, 255 = papel
             ink = (255 - sep_arr) / 255.0
+            assert_analysis_dimensions(f"Máscara de tinta '{png_file}'", ink, analysis_size)
             light_through *= (1.0 - ink)
 
-            name = png_file.replace('.png', '').replace('_', ' ').title()
+            name = entry.get('name') or png_file.replace('.png', '').replace('_', ' ').title()
 
             # Calcular métricas
             ink_pixels = np.sum(ink > 0.1)
@@ -2379,9 +2471,11 @@ def analyze_detailed():
         # preprocesamiento binario que una placa individual.
         combined_sep_arr = np.clip(255.0 - total_coverage * 255.0, 0, 255).astype(np.uint8)
         combined_sep_img = Image.fromarray(combined_sep_arr, mode='L')
+        assert_analysis_dimensions('Separación combinada para análisis estructural', combined_sep_img, analysis_size)
         structural = compare_structural_images(aligned_ref, combined_sep_img)
         score = structural['score']
         diff_img = structural['diff_map']
+        assert_analysis_dimensions('Mapa de diferencias devuelto', diff_img, analysis_size)
 
         # Los hallazgos estructurales van primero; las advertencias de cobertura
         # por placa quedan como información secundaria.
@@ -2396,7 +2490,7 @@ def analyze_detailed():
                 **structural['metrics'],
                 'structural_score': score,
                 'total_coverage': total_coverage_pct,
-                'separation_count': len(png_files)
+                'separation_count': len(manifest)
             }
         })
 
