@@ -1,0 +1,7 @@
+{
+    "version": "0.4.0",
+    "build_label": "sprint-2-diagnostic-protocol",
+    "generated_at": "2026-07-15T05:20:00Z",
+    "summary": "Knowledge Engine v1 (color matching, wired) + Domain Vocabulary (aislado, sin consumidor) + Knowledge Pipeline Spec v1.0 + Diagnostic Protocol (ADR-010)",
+    "_note": "Este archivo se bumpea a mano en cada build que se empaqueta. Si alguien lo olvida, knowledge_engine_hash (calculado en app.py al arrancar) sigue siendo la fuente de verdad de si el código de core/knowledge/ cambió."
+}
