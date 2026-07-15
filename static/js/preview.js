@@ -212,7 +212,7 @@ const PreviewModule = (function() {
                     <div class="sep-thumb-size">${sep.size[0]} x ${sep.size[1]} px</div>
                     <div style="display:flex;align-items:center;gap:4px;margin-top:4px;">
                         ${!sep.is_cmyk ? `<input type="color" class="color-picker-input" value="${sep.hex_color}" onchange="PreviewModule.updateSepColor('${sep.filename}', this.value)" style="width: 24px; height: 24px; padding: 0; border: none; cursor: pointer;">` : ''}
-                        <input type="text" class="form-input" value="${sep.hex_color}" onchange="PreviewModule.updateSepColor('${sep.filename}', this.value)" style="padding: 2px 6px; font-size: 0.75rem; width: 70px; font-family: var(--font-mono); text-align: center;" placeholder="#HEX">
+                        <input type="text" class="form-input" value="${sep.hex_color}" onchange="PreviewModule.updateSepColor('${sep.filename}', this.value)" style="padding: 2px 6px; font-size: 0.75rem; width: 70px; font-family: var(--font-mono); text-align: center;" placeholder="#HEX o nombre" title="Podés escribir un hex (#0066CC) o un nombre de color como 'azul claro'">
                         <button onclick="PreviewModule.toggleColorize('${sep.filename}')" class="btn-secondary" style="padding: 2px 6px; font-size: 0.7rem; border-radius: 4px; border: 1px solid var(--border-medium); background: var(--bg-tertiary); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; gap: 4px;" title="Alternar previsualización de color"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg> Color</button>
                     </div>
                 </div>
@@ -432,16 +432,46 @@ const PreviewModule = (function() {
         }
     }
 
+    // Resuelve el valor tecleado por el usuario a un hex válido.
+    // Si ya es un hex (#RGB o #RRGGBB) lo deja igual. Si no, lo pasa
+    // por el Knowledge Engine, que interpreta nombres/alias con
+    // modificador opcional (p. ej. "azul claro", "yellow vibrant")
+    // y devuelve un KnowledgeInfo.
+    function resolveColorInput(value) {
+        const trimmed = (value || '').trim();
+        if (/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(trimmed)) {
+            return trimmed;
+        }
+
+        if (typeof KnowledgeEngine === 'undefined') {
+            return trimmed;
+        }
+
+        const info = KnowledgeEngine.resolve(trimmed);
+        if (info.displayColor) {
+            if (info.warnings && info.warnings.length) {
+                const logType = info.confidence === 0 ? 'warn' : 'info';
+                info.warnings.forEach(w => logPreview(`Color: ${w}`, logType));
+            }
+            return info.displayColor;
+        }
+
+        // No se pudo resolver: se conserva el valor tal cual fue escrito
+        return trimmed;
+    }
+
     function updateSepColor(filename, newColor) {
+        const resolvedColor = resolveColorInput(newColor);
+
         const sep = separationImages.find(s => s.filename === filename);
-        if (sep) sep.hex_color = newColor;
+        if (sep) sep.hex_color = resolvedColor;
 
         const layer = layerSettings.find(l => l.filename === filename);
-        if (layer) layer.color = newColor;
+        if (layer) layer.color = resolvedColor;
 
         const bg = document.getElementById(`sep-bg-${filename}`);
         if (bg && bg.dataset.colorized === "true") {
-            bg.style.backgroundColor = newColor;
+            bg.style.backgroundColor = resolvedColor;
         }
 
         renderPreviewByMode();
@@ -693,7 +723,7 @@ const PreviewModule = (function() {
 
     function setAlignValues(scale, x, y) {
         const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-        const s = clamp(Math.round(scale * 100), 10, 300);
+        const s = clamp(Math.round(scale * 100), 5, 800);
         const xi = clamp(Math.round(x), -5000, 5000);
         const yi = clamp(Math.round(y), -5000, 5000);
         if ($('align-scale'))     $('align-scale').value     = s;
@@ -837,7 +867,7 @@ const PreviewModule = (function() {
         const distNow = Math.hypot(mouseX - anchor[0], mouseY - anchor[1]) || 0;
 
         let newScale = v0.scale * (distNow / dist0);
-        newScale = Math.min(3.0, Math.max(0.10, newScale));
+        newScale = Math.min(8.0, Math.max(0.05, newScale));
 
         const newX = anchor[0] - oppositeLocal[0] * newScale;
         const newY = anchor[1] - oppositeLocal[1] * newScale;
@@ -856,6 +886,11 @@ const PreviewModule = (function() {
         if ($('align-scale')) $('align-scale').oninput = () => updateRefTransform('scale-range');
         if ($('align-x'))     $('align-x').oninput     = () => updateRefTransform('x-range');
         if ($('align-y'))     $('align-y').oninput     = () => updateRefTransform('y-range');
+
+        if ($('edge-tolerance') && $('edge-tolerance-num')) {
+            $('edge-tolerance').oninput     = () => { $('edge-tolerance-num').value = $('edge-tolerance').value; };
+            $('edge-tolerance-num').oninput = () => { $('edge-tolerance').value = $('edge-tolerance-num').value; };
+        }
         // Inputs numéricos
         if ($('align-scale-num')) $('align-scale-num').oninput = () => updateRefTransform('scale-num');
         if ($('align-x-num'))     $('align-x-num').oninput     = () => updateRefTransform('x-num');
@@ -890,7 +925,7 @@ const PreviewModule = (function() {
                 ? baseImg.naturalWidth / baseImg.clientWidth : 1;
 
             const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-            const scalePct = clamp(Math.round(data.scale * 100), 10, 300);
+            const scalePct = clamp(Math.round(data.scale * 100), 5, 800);
             const xSlider  = clamp(Math.round(data.offset_x / displayRatio), -5000, 5000);
             const ySlider  = clamp(Math.round(data.offset_y / displayRatio), -5000, 5000);
 
@@ -1011,7 +1046,11 @@ const PreviewModule = (function() {
                     reference:   refImageData,
                     align_scale: alignVals.scale,
                     align_x:     Math.round(alignVals.x * displayRatio),
-                    align_y:     Math.round(alignVals.y * displayRatio)
+                    align_y:     Math.round(alignVals.y * displayRatio),
+                    remove_ref_background: $('remove-ref-bg') ? $('remove-ref-bg').checked : true,
+                    edge_tolerance_px: $('edge-tolerance') ? parseInt($('edge-tolerance').value, 10) : 3,
+                    density_mode: $('density-mode-select') ? $('density-mode-select').value : 'auto',
+                    reinforcement_keywords: $('reinforcement-keywords') ? $('reinforcement-keywords').value : ''
                 })
             });
             const data = await resp.json();
