@@ -407,8 +407,8 @@
 
                             <div class="overlay-control" style="margin:0; border:none; padding:0; background:transparent;">
                                 <span class="overlay-label">Escala</span>
-                                <input type="range" min="10" max="300" value="100" id="align-scale" style="flex:1;">
-                                <input type="number" id="align-scale-num" value="100" min="10" max="300" style="width:54px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
+                                <input type="range" min="5" max="800" value="100" id="align-scale" style="flex:1;">
+                                <input type="number" id="align-scale-num" value="100" min="5" max="800" style="width:54px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
                                 <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">%</span>
                             </div>
                             <div class="overlay-control" style="margin:0; border:none; padding:0; background:transparent;">
@@ -423,6 +423,32 @@
                                 <input type="number" id="align-y-num" value="0" min="-5000" max="5000" style="width:60px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
                                 <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">px</span>
                             </div>
+                        </div>
+
+                        <label style="display:flex; align-items:center; gap:6px; margin-top:8px; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); cursor:pointer;">
+                            <input type="checkbox" id="remove-ref-bg" checked style="cursor:pointer;">
+                            Quitar fondo del mockup de referencia (no cuenta como tinta faltante)
+                        </label>
+
+                        <div class="overlay-control" style="margin:6px 0 0; border:none; padding:0; background:transparent;">
+                            <span class="overlay-label" title="Ignora halos de borde de hasta N px (desalineamiento sub-píxel, antialiasing de la foto), sin dejar de detectar objetos realmente faltantes.">Tolerancia de borde</span>
+                            <input type="range" min="0" max="15" value="3" id="edge-tolerance" style="flex:1;">
+                            <input type="number" id="edge-tolerance-num" value="3" min="0" max="15" style="width:54px; padding:2px 4px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary); text-align:center;">
+                            <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted)">px</span>
+                        </div>
+
+                        <div class="overlay-control" style="margin:6px 0 0; border:none; padding:0; background:transparent;">
+                            <span class="overlay-label" title="Para arte con trama de medios tonos/fotográfico: compara densidad de tinta local en vez de píxel exacto, ya que los puntos de trama nunca caen pixel-perfect contra una referencia de tono continuo.">Modo tramado</span>
+                            <select id="density-mode-select" style="flex:1; padding:3px 6px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary);">
+                                <option value="auto" selected>Auto (detectar LPI del trabajo)</option>
+                                <option value="on">Forzar activado (densidad tonal)</option>
+                                <option value="off">Forzar desactivado (píxel exacto)</option>
+                            </select>
+                        </div>
+
+                        <div class="overlay-control" style="margin:6px 0 0; border:none; padding:0; background:transparent;">
+                            <span class="overlay-label" title="Canales cuyo nombre coincida con estas palabras (ej. 'base', 'refuerzo') se excluyen del encaje estructural: esa tinta va debajo de otras capas para dar opacidad y no debe compararse como marca visible propia. Ya se detectan 'base', 'refuerzo' y 'underbase' automáticamente; agrega otras si tu nomenclatura es distinta (ej. 'white' si siempre usas ese nombre para el refuerzo).">Palabras clave refuerzo extra</span>
+                            <input type="text" id="reinforcement-keywords" placeholder="ej: white, highlight" style="flex:1; padding:3px 6px; font-family:var(--font-mono); font-size:0.65rem; background:var(--bg-deep); border:1px solid var(--border-light); border-radius:4px; color:var(--text-primary);">
                         </div>
                     </div>
 
@@ -452,11 +478,32 @@
         <div style="margin-top: 6px; font-size: 0.65rem; color: var(--text-dim);">
             Procesamiento 100% offline · Tus archivos nunca salen de esta máquina
         </div>
+        <div style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim);" title="{{ build_info.summary }}">
+            build: {{ build_info.build_label }} · product v{{ build_info.version }} · build {{ build_info.build }} · knowledge_engine_hash={{ build_info.knowledge_engine_hash }}
+        </div>
     </footer>
 
     <!-- Scripts -->
+    <!-- Knowledge Engine (orden importa: datos -> lógica -> coordinador) -->
+    <script src="{{ url_for('static', filename='js/core/knowledge/data/colorDatabase.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/core/knowledge/data/aliases.js') }}"></script>
+    <!-- Domain Vocabulary (core/knowledge/domain/) intencionalmente NO cargada:
+         todavía no tiene consumidor. Se integra cuando el pipeline la use. -->
+    <script src="{{ url_for('static', filename='js/core/knowledge/modifierDetector.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/core/knowledge/colorMatcher.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/core/knowledge/policies/undefinedColorPolicy.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/core/knowledge/KnowledgeInfo.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/core/knowledge/knowledgeEngine.js') }}"></script>
     <script src="{{ url_for('static', filename='js/rip.js') }}"></script>
     <script src="{{ url_for('static', filename='js/preview.js') }}"></script>
+
+    <!-- Build info (Protocolo de Diagnóstico, ADR-010, paso 1) -->
+    <script>
+        console.log(
+            '%c[BUILD] {{ build_info.build_label }} · product v{{ build_info.version }} · build {{ build_info.build }} · knowledge_engine_hash={{ build_info.knowledge_engine_hash }}',
+            'color:#00d4ff;font-weight:bold;'
+        );
+    </script>
 
     <!-- Tab Navigation & Theme -->
     <script>
